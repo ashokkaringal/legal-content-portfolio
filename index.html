@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>[Your Name] - Legal Content Writer | AI-Resistant Blog Writing</title>
+    <meta name="description" content="Specializing in SEO-optimized legal blogs for personal injury law firms. Content that passes AI detection and converts readers into clients.">
+    <meta name="keywords" content="legal content writer, law firm blog writing, AI-resistant content, personal injury blogs, SEO legal content">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="[Your Name] - Legal Content Writer | AI-Resistant Blog Writing">
+    <meta property="og:description" content="Specializing in SEO-optimized legal blogs for personal injury law firms. Content that passes AI detection and converts readers into clients.">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google Analytics Placeholder (uncomment when ready) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    -->
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    
+    <!-- Header/Navigation -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#hero" class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                        [Your Name] - Legal Content Specialist
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#hero" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Home</a>
+                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Samples</a>
+                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Services</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Contact</a>
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-800" aria-label="Toggle dark mode">
+                        <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu Button & Dark Mode Toggle -->
+                <div class="flex items-center space-x-2 md:hidden">
+                    <button id="dark-mode-toggle-mobile" class="p-2 rounded-lg text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400" aria-label="Toggle dark mode">
+                        <svg id="sun-icon-mobile" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                        <svg id="moon-icon-mobile" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400" aria-label="Toggle menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#hero" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+                <a href="#portfolio" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Samples</a>
+                <a href="#services" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
+                <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Animated Background -->
+        <div class="hero-background absolute inset-0"></div>
+        <div class="hero-mesh absolute inset-0"></div>
+        <div class="hero-grid absolute inset-0"></div>
+        <div class="hero-noise absolute inset-0"></div>
+        <div class="hero-orbs absolute inset-0">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        
+        <!-- Mouse Spotlight -->
+        <div id="mouse-spotlight" class="mouse-spotlight"></div>
+        
+        <!-- Content Container -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid lg:grid-cols-[55%_45%] gap-12 items-center">
+                
+                <!-- Left Column - Content -->
+                <div class="hero-content">
+                    <h1 class="hero-headline text-white mb-6">
+                        <span class="hero-line">Blog Content That</span>
+                        <span class="hero-line"><span class="gradient-text">Ranks</span>, <span class="gradient-text">Converts</span>, and <span class="gradient-text">Passes</span> Every</span>
+                        <span class="hero-line">AI Detector</span>
+                    </h1>
+                    
+                    <p class="hero-subheading text-gray-300 mb-8 max-w-2xl">
+                        I create SEO-optimized legal blogs that sound genuinely human—because they are.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="#portfolio" class="btn-primary group">
+                            View My Work
+                            <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            Get Free Sample
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-badges flex flex-wrap gap-6">
+                        <div class="trust-badge">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>15+ States Served</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>13% Avg AI Score</span>
+                        </div>
+                        <div class="trust-badge">
+                            <span class="text-green-400 mr-2">✓</span>
+                            <span>48-Hour Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column - Metrics Dashboard -->
+                <div class="hero-visual hidden lg:block">
+                    <div class="metrics-cards">
+                        <!-- Card 1 - AI Detection Score -->
+                        <div class="metric-card card-1">
+                            <div class="metric-icon">✓</div>
+                            <div class="metric-value" id="ai-score">12%</div>
+                            <div class="metric-label">AI Detection Score</div>
+                            <div class="progress-ring">
+                                <svg class="progress-ring-svg" width="80" height="80">
+                                    <circle class="progress-ring-circle" cx="40" cy="40" r="36"></circle>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 - Grammar Score -->
+                        <div class="metric-card card-2">
+                            <div class="metric-icon">⭐</div>
+                            <div class="metric-value" id="grammar-score">98%</div>
+                            <div class="metric-label">Grammar Score</div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-fill" id="grammar-progress"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 - Word Count -->
+                        <div class="metric-card card-3">
+                            <div class="metric-icon">📄</div>
+                            <div class="metric-value" id="word-count">0</div>
+                            <div class="metric-label">Average Word Count</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div id="scroll-indicator" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50">
+            <div class="flex flex-col items-center">
+                <span class="text-sm mb-2">Scroll to explore</span>
+                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Problem/Solution Section -->
+    <section id="problem-solution" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Law Firms Face a Content Crisis</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Problems Column -->
+                <div class="problem-card p-8 bg-red-50 rounded-2xl border border-red-100">
+                    <h3 class="text-2xl font-bold text-red-900 dark:text-red-400 mb-6">The Problems</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">❌</span>
+                            <span class="text-gray-700 dark:text-gray-300">AI-generated content gets flagged by Google</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">❌</span>
+                            <span class="text-gray-700 dark:text-gray-300">Generic blogs don't convert readers to clients</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">❌</span>
+                            <span class="text-gray-700 dark:text-gray-300">Most writers don't understand legal nuances</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">❌</span>
+                            <span class="text-gray-700 dark:text-gray-300">Cookie-cutter content hurts SEO rankings</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Solutions Column -->
+                <div class="solution-card p-8 bg-green-50 rounded-2xl border border-green-100">
+                    <h3 class="text-2xl font-bold text-green-900 dark:text-green-400 mb-6">My Solutions</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">✅</span>
+                            <span class="text-gray-700 dark:text-gray-300">I deliver blogs that pass AI detection (&lt;15%)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">✅</span>
+                            <span class="text-gray-700 dark:text-gray-300">Written for humans, optimized for search engines</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">✅</span>
+                            <span class="text-gray-700 dark:text-gray-300">Legal-specific knowledge across practice areas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">✅</span>
+                            <span class="text-gray-700 dark:text-gray-300">Exact specifications: word count, anchor text, links</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio/Samples Section -->
+    <section id="portfolio" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Sample Work</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Sample 1 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-sm font-semibold rounded-full">Personal Injury</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Top 5 Tips for Choosing the Right Personal Injury Lawyer</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Van Nuys, CA</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 527 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 12% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="1">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Blog Sample 2 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-sm font-semibold rounded-full">Personal Injury</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Common Types of Cases a Personal Injury Lawyer Can Handle</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">St. Petersburg, FL</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 528 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 15% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="2">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Blog Sample 3 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300 text-sm font-semibold rounded-full">Brain Injury</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Top 5 Common Causes of Traumatic Brain Injuries</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Portland, OR</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 526 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 14% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="3">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Blog Sample 4 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-300 text-sm font-semibold rounded-full">Truck Accidents</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Why Truck Accidents Are More Complicated Than Regular Car Accidents</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Seattle, WA</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 527 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 13% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="4">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Blog Sample 5 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-300 text-sm font-semibold rounded-full">Rideshare Accidents</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Key Benefits of Hiring a Rideshare Accident Attorney</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Portland, OR</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 530 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 11% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="5">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Blog Sample 6 -->
+                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="inline-block px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-300 text-sm font-semibold rounded-full">Workplace Injury</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">Common Risks at Oil Refineries & Their Consequences</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-4">Houston, TX</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 528 ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 12% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
+                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
+                        </div>
+                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="6">
+                            Read Full Blog
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">What You Get</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Word Count</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Exact 525-530 words</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🤖</div>
+                        <h3 class="text-xl font-bold mb-2 dark:text-white">AI Detection</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Guaranteed under 15%</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🔗</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">SEO Optimized</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Proper anchor text + links</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Authoritative Links</h3>
+                    <p class="text-gray-600 dark:text-gray-400">2 U.S. sources</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">✍️</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Human Voice</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Natural, conversational tone</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Fast Delivery</h3>
+                    <p class="text-gray-600 dark:text-gray-400">24-48 hour turnaround</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Revisions</h3>
+                    <p class="text-gray-600 dark:text-gray-400">2 rounds included</p>
+                </div>
+                
+                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">Quality Reports</h3>
+                    <p class="text-gray-600 dark:text-gray-400">AI & grammar scores</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">How It Works</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="process-step text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Provide</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Title, anchor text, client link, location</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">I Deliver</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Draft blog within 24-48 hours</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Review</h3>
+                    <p class="text-gray-600 dark:text-gray-400">2 revision rounds included</p>
+                </div>
+                
+                <div class="process-step text-center">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Publish</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Ready-to-use HTML format</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Transparent Pricing</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Pricing Card 1 -->
+                <div class="pricing-card p-8 bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl transition-all">
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Single Blog</h3>
+                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$100</div>
+                    <div class="text-gray-600 dark:text-gray-400 mb-6">per blog</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">All features included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">24-48 hour delivery</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">2 revision rounds</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
+                        Get Started
+                    </a>
+                </div>
+                
+                <!-- Pricing Card 2 - Popular -->
+                <div class="pricing-card p-8 bg-blue-50 border-2 border-blue-600 rounded-2xl hover:shadow-xl transition-all relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">POPULAR</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Monthly Package</h3>
+                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$350</div>
+                    <div class="text-gray-600 dark:text-gray-400 mb-6">per month</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">4 blogs per month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">Priority delivery</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">All features included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">Save $50/month</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
+                        Choose Plan
+                    </a>
+                </div>
+                
+                <!-- Pricing Card 3 -->
+                <div class="pricing-card p-8 bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl transition-all">
+                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Bulk Discount</h3>
+                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$75</div>
+                    <div class="text-gray-600 dark:text-gray-400 mb-6">per blog</div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">10+ blogs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">Best value</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">All features included</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-green-500 mr-2">✓</span>
+                            <span class="dark:text-gray-300">Custom timeline</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">What Clients Say</h2>
+            
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
+                    Currently accepting first clients. Free sample blog for qualified law firms.
+                </p>
+                <p class="text-gray-500 dark:text-gray-400">
+                    This section will feature client testimonials as they become available.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Let's Work Together</h2>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email *</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="firm" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Law Firm Name *</label>
+                            <input type="text" id="firm" name="firm" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message/Project Details *</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
+                            Send Message
+                        </button>
+                        
+                        <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold mb-2 dark:text-gray-300">Email</h4>
+                            <a href="mailto:your@email.com" class="text-blue-600 dark:text-blue-400 hover:underline">your@email.com</a>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2 dark:text-gray-300">Located in</h4>
+                            <p class="text-gray-600 dark:text-gray-400">[Your City, State]</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2 dark:text-gray-300">Available</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Monday-Friday, 9 AM - 6 PM EST</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold mb-2 dark:text-gray-300">Connect</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300" aria-label="LinkedIn">
+                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">[Your Name] - Legal Content Specialist</h3>
+                    <p class="text-gray-400">Creating AI-resistant, SEO-optimized legal content for law firms.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Samples</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 [Your Name]. All rights reserved.</p>
+                <button id="back-to-top" class="mt-4 md:mt-0 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
+                    Back to Top ↑
+                </button>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Blog Modal -->
+    <div id="blog-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center">
+                <h3 id="modal-title" class="text-2xl font-bold dark:text-white"></h3>
+                <button id="modal-close" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl" aria-label="Close">×</button>
+            </div>
+            <div id="modal-content" class="p-6 prose max-w-none dark:prose-invert">
+                <!-- Blog content will be inserted here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Blog Content Data (hidden, for JavaScript) -->
+    <script type="application/json" id="blog-data">
+    {
+        "1": {
+            "title": "Top 5 Tips for Choosing the Right Personal Injury Lawyer",
+            "location": "Van Nuys, CA",
+            "content": "<p>[Placeholder content - Replace with your actual Van Nuys blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        },
+        "2": {
+            "title": "Common Types of Cases a Personal Injury Lawyer Can Handle",
+            "location": "St. Petersburg, FL",
+            "content": "<p>[Placeholder content - Replace with your actual St. Petersburg blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        },
+        "3": {
+            "title": "Top 5 Common Causes of Traumatic Brain Injuries",
+            "location": "Portland, OR",
+            "content": "<p>[Placeholder content - Replace with your actual Portland brain injury blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        },
+        "4": {
+            "title": "Why Truck Accidents Are More Complicated Than Regular Car Accidents",
+            "location": "Seattle, WA",
+            "content": "<p>[Placeholder content - Replace with your actual Seattle truck accident blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        },
+        "5": {
+            "title": "Key Benefits of Hiring a Rideshare Accident Attorney",
+            "location": "Portland, OR",
+            "content": "<p>[Placeholder content - Replace with your actual Portland rideshare blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        },
+        "6": {
+            "title": "Common Risks at Oil Refineries & Their Consequences",
+            "location": "Houston, TX",
+            "content": "<p>[Placeholder content - Replace with your actual Houston refinery blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
+        }
+    }
+    </script>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

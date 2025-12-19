@@ -1,0 +1,907 @@
+/* ============================================
+   CSS Variables for Easy Theming
+   ============================================ */
+:root {
+    --color-primary: #1e40af;
+    --color-primary-light: #3b82f6;
+    --color-secondary: #8b5cf6;
+    --color-accent: #10b981;
+    --color-cyan: #06b6d4;
+    --color-dark-navy: #0a0f1e;
+    --color-text: #1f2937;
+    --color-text-light: #6b7280;
+    --color-bg: #f9fafb;
+    --color-white: #ffffff;
+}
+
+/* Dark mode variables */
+.dark {
+    --color-text: #f3f4f6;
+    --color-text-light: #9ca3af;
+    --color-bg: #111827;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--color-text);
+    overflow-x: hidden;
+}
+
+/* Ensure all text is visible in dark mode - fallback for elements without explicit dark mode classes */
+.dark section p:not([class*="text-"]):not([class*="dark:"]),
+.dark section span:not([class*="text-"]):not([class*="dark:"]),
+.dark section div:not([class*="text-"]):not([class*="dark:"]),
+.dark section li:not([class*="text-"]):not([class*="dark:"]) {
+    color: #d1d5db;
+}
+
+/* Ensure headings without dark mode classes are visible */
+.dark h1:not([class*="dark:"]),
+.dark h2:not([class*="dark:"]),
+.dark h3:not([class*="dark:"]),
+.dark h4:not([class*="dark:"]),
+.dark h5:not([class*="dark:"]),
+.dark h6:not([class*="dark:"]) {
+    color: #f9fafb;
+}
+
+/* Catch any text elements that might be using Tailwind text-gray classes without dark variants */
+.dark [class*="text-gray-600"]:not([class*="dark:text-"]),
+.dark [class*="text-gray-700"]:not([class*="dark:text-"]),
+.dark [class*="text-gray-500"]:not([class*="dark:text-"]) {
+    color: #9ca3af;
+}
+
+/* Ensure font-bold elements without explicit color are visible */
+.dark .font-bold:not([class*="text-"]):not([class*="dark:"]) {
+    color: #f9fafb;
+}
+
+/* ============================================
+   Header/Navigation Styles
+   ============================================ */
+#header {
+    transition: all 0.3s ease;
+}
+
+#header.shrink {
+    height: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure header background is solid in dark mode */
+.dark #header {
+    background-color: rgba(17, 24, 39, 0.98) !important;
+    backdrop-filter: blur(12px);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+    color: #374151;
+}
+
+/* Force navigation links to be visible in dark mode */
+.dark #header .nav-link,
+.dark #header a.nav-link {
+    color: #d1d5db !important;
+}
+
+.dark #header .nav-link:hover,
+.dark #header a.nav-link:hover {
+    color: #60a5fa !important;
+}
+
+/* Ensure all header links are visible */
+.dark #header a:not(.nav-link) {
+    color: #d1d5db !important;
+}
+
+.dark #header a:hover:not(.nav-link) {
+    color: #60a5fa !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary-light);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.dark .nav-link::after {
+    background: #60a5fa;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+#mobile-menu.open {
+    max-height: 300px;
+}
+
+/* Ensure mobile menu links are visible in dark mode */
+.dark #mobile-menu a {
+    color: #d1d5db !important;
+}
+
+.dark #mobile-menu a:hover {
+    color: #60a5fa !important;
+}
+
+/* ============================================
+   Hero Section - Background & Mesh
+   ============================================ */
+#hero {
+    position: relative;
+    background: var(--color-dark-navy);
+    color: white;
+}
+
+.hero-background {
+    background: var(--color-dark-navy);
+    z-index: 1;
+}
+
+.hero-mesh {
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(30, 64, 175, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
+    background-size: 200% 200%;
+    animation: mesh-animation 35s ease infinite;
+    z-index: 2;
+}
+
+@keyframes mesh-animation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero-grid {
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+/* Noise Texture Overlay */
+.hero-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+}
+
+/* Floating Orbs */
+.hero-orbs {
+    z-index: 2;
+    pointer-events: none;
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: orb-float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: var(--color-primary-light);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 250px;
+    height: 250px;
+    background: var(--color-secondary);
+    top: 60%;
+    right: 15%;
+    animation-delay: 7s;
+}
+
+.orb-3 {
+    width: 200px;
+    height: 200px;
+    background: var(--color-cyan);
+    bottom: 20%;
+    left: 50%;
+    animation-delay: 14s;
+}
+
+@keyframes orb-float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+/* Mouse Spotlight Effect */
+.mouse-spotlight {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.mouse-spotlight.active {
+    opacity: 1;
+}
+
+/* ============================================
+   Hero Section - Typography
+   ============================================ */
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-headline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-weight: 800;
+    font-size: 64px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-up 0.8s ease forwards;
+}
+
+.hero-line:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.hero-line:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-line:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fade-up {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-cyan) 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.hero-subheading {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #94a3b8;
+    opacity: 0;
+    animation: fade-in 0.8s ease 0.5s forwards;
+    max-width: 600px;
+}
+
+@keyframes fade-in {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Hero Section - Buttons
+   ============================================ */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 36px;
+    background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-secondary) 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-up 0.8s ease 0.7s forwards;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(59, 130, 246, 0.6);
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 36px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-up 0.8s ease 0.7s forwards;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.02);
+}
+
+/* Trust Badges */
+.trust-badges {
+    opacity: 0;
+    animation: fade-in 0.8s ease 0.9s forwards;
+}
+
+.trust-badge {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+}
+
+/* ============================================
+   Hero Section - Metrics Dashboard
+   ============================================ */
+.metrics-cards {
+    position: relative;
+    z-index: 10;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-up 0.8s ease forwards;
+    position: relative;
+    will-change: transform;
+}
+
+.card-1 {
+    animation-delay: 0.4s;
+    transform: rotate(-2deg);
+}
+
+.card-2 {
+    animation-delay: 0.5s;
+    transform: rotate(2deg);
+    margin-left: 20px;
+}
+
+.card-3 {
+    animation-delay: 0.6s;
+    transform: rotate(-1deg);
+}
+
+
+.card-1 {
+    transform: rotate(-2deg);
+    animation: card-float-1 4s ease-in-out infinite;
+}
+
+.card-2 {
+    transform: rotate(2deg);
+    animation: card-float-2 3.5s ease-in-out infinite 0.5s;
+}
+
+.card-3 {
+    transform: rotate(-1deg);
+    animation: card-float-3 4.5s ease-in-out infinite 1s;
+}
+
+@keyframes card-float-1 {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+}
+
+@keyframes card-float-2 {
+    0%, 100% {
+        transform: translateY(0) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes card-float-3 {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-1deg);
+    }
+}
+
+.metric-icon {
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.metric-value {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.metric-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 16px;
+}
+
+/* Progress Ring */
+.progress-ring {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 16px;
+}
+
+.progress-ring-svg {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 4;
+    stroke-dasharray: 226.2;
+    stroke-dashoffset: 226.2;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2s ease;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primary-light), var(--color-cyan));
+    width: 0%;
+    border-radius: 4px;
+    transition: width 2s ease;
+}
+
+/* ============================================
+   Scroll Indicator
+   ============================================ */
+#scroll-indicator {
+    transition: opacity 0.3s ease;
+}
+
+#scroll-indicator.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ============================================
+   Section Animations
+   ============================================ */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   Blog Cards
+   ============================================ */
+.blog-card {
+    transition: all 0.3s ease;
+    will-change: transform;
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ============================================
+   Modal Styles
+   ============================================ */
+#blog-modal {
+    display: none;
+}
+
+#blog-modal.show {
+    display: flex;
+    animation: modal-fade-in 0.3s ease;
+}
+
+@keyframes modal-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#blog-modal .bg-white {
+    animation: modal-slide-up 0.3s ease;
+}
+
+@keyframes modal-slide-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+@media (max-width: 1024px) {
+    .hero-headline {
+        font-size: 48px;
+    }
+    
+    .hero-subheading {
+        font-size: 20px;
+    }
+    
+    .metric-card {
+        margin-left: 0 !important;
+        transform: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-headline {
+        font-size: 36px;
+    }
+    
+    .hero-subheading {
+        font-size: 18px;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        padding: 16px 32px;
+    }
+    
+    .trust-badges {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .hero-visual {
+        margin-top: 40px;
+    }
+    
+    .metric-card {
+        transform: none !important;
+    }
+    
+    /* Simplify animations on mobile for performance */
+    .hero-mesh {
+        animation-duration: 60s;
+    }
+    
+    .orb {
+        filter: blur(60px);
+    }
+}
+
+@media (max-width: 320px) {
+    .hero-headline {
+        font-size: 28px;
+    }
+}
+
+/* ============================================
+   Reduced Motion Support
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-mesh {
+        animation: none;
+    }
+    
+    .orb {
+        animation: none;
+    }
+    
+    .metric-card {
+        animation: none !important;
+    }
+}
+
+/* ============================================
+   Back to Top Button
+   ============================================ */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#back-to-top.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* ============================================
+   Form Styles
+   ============================================ */
+#contact-form input:focus,
+#contact-form textarea:focus {
+    outline: none;
+}
+
+#form-message.success {
+    background: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+
+.dark #form-message.success {
+    background: rgba(16, 185, 129, 0.2);
+    color: #6ee7b7;
+    border: 1px solid #10b981;
+}
+
+#form-message.error {
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+
+.dark #form-message.error {
+    background: rgba(239, 68, 68, 0.2);
+    color: #fca5a5;
+    border: 1px solid #ef4444;
+}
+
+/* ============================================
+   Dark Mode Styles
+   ============================================ */
+.dark section {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.dark .problem-card {
+    background-color: rgba(127, 29, 29, 0.2);
+    border-color: rgba(127, 29, 29, 0.3);
+}
+
+.dark .solution-card {
+    background-color: rgba(5, 46, 22, 0.2);
+    border-color: rgba(5, 46, 22, 0.3);
+}
+
+.dark .blog-card {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.dark .blog-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.dark .service-card {
+    background-color: #1f2937;
+}
+
+.dark .service-card:hover {
+    background-color: #374151;
+}
+
+.dark .pricing-card {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+.dark .pricing-card.bg-blue-50 {
+    background-color: rgba(30, 64, 175, 0.2);
+    border-color: rgba(37, 99, 235, 0.4);
+}
+
+.dark #contact-form input,
+.dark #contact-form textarea {
+    background-color: #1f2937;
+    border-color: #374151;
+    color: var(--color-text);
+}
+
+.dark #contact-form input:focus,
+.dark #contact-form textarea:focus {
+    border-color: var(--color-primary-light);
+    background-color: #111827;
+}
+
+.dark .bg-gray-50 {
+    background-color: #111827;
+}
+
+.dark .bg-white {
+    background-color: #1f2937;
+}
+
+.dark footer {
+    background-color: #030712;
+}
+
+.dark #blog-modal .bg-white {
+    background-color: #1f2937;
+    color: var(--color-text);
+}
+
+.dark #blog-modal .border-gray-200 {
+    border-color: #374151;
+}
+
+/* Modal content text visibility */
+.dark #modal-content p,
+.dark #modal-content span,
+.dark #modal-content div,
+.dark #modal-content li {
+    color: #d1d5db;
+}
+
+.dark #modal-content h1,
+.dark #modal-content h2,
+.dark #modal-content h3,
+.dark #modal-content h4,
+.dark #modal-content h5,
+.dark #modal-content h6 {
+    color: #f9fafb;
+}
+
+.dark .text-gray-600 {
+    color: #9ca3af;
+}
+
+.dark .text-gray-700 {
+    color: #d1d5db;
+}
+
+.dark .text-gray-900 {
+    color: #f9fafb;
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+.text-balance {
+    text-wrap: balance;
+}
+
