@@ -528,7 +528,11 @@
           <h2>Send a Message</h2>
           <p>Fill out the form below and I'll get back to you as soon as possible.</p>
 
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+            <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+            
             <div id="form-message" style="display: none; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.95rem;"></div>
             
             <div class="form-group">
@@ -586,7 +590,7 @@
             </div>
 
             <!-- Honeypot field for spam protection -->
-            <input type="text" name="_gotcha" style="display: none;">
+            <input type="checkbox" name="botcheck" style="display: none;">
 
             <button type="submit" class="btn-primary" id="submit-btn">
               <span id="submit-text">Send Message</span>
@@ -648,7 +652,9 @@
               }
             });
 
-            if (response.ok) {
+            const result = await response.json();
+
+            if (response.ok && result.success) {
               formMessage.style.display = 'block';
               formMessage.style.background = 'rgba(16, 185, 129, 0.2)';
               formMessage.style.border = '1px solid rgba(16, 185, 129, 0.5)';
@@ -656,7 +662,7 @@
               formMessage.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.';
               contactForm.reset();
             } else {
-              throw new Error('Form submission failed');
+              throw new Error(result.message || 'Form submission failed');
             }
           } catch (error) {
             formMessage.style.display = 'block';
