@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Ashok – Web Developer & Technical Consultant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<style>
+/* ---------------------------------------------------
+   THEME VARIABLES
+--------------------------------------------------- */
+
+/* Default theme (Midnight Navy + Cyan Glow) */
+:root {
+  --bg: #020617;
+  --bg-alt: #0F172A;
+  --accent: #22D3EE;
+  --accent-soft: rgba(34, 211, 238, 0.15);
+  --text-main: #E5E7EB;
+  --text-muted: #94A3B8;
+  --card-bg: #0F172A;
+  --border-subtle: #1E293B;
+}
+
+/* Theme 1: Deep Charcoal + Electric Blue */
+[data-theme="charcoal"] {
+  --bg: #0D0D0D;
+  --bg-alt: #111827;
+  --accent: #38BDF8;
+  --accent-soft: rgba(56, 189, 248, 0.15);
+  --text-main: #E5E7EB;
+  --text-muted: #9CA3AF;
+  --card-bg: #111827;
+  --border-subtle: #1F2937;
+}
+
+/* Theme 2: Midnight Navy + Cyan Glow (default) */
+[data-theme="midnight"] {
+  --bg: #020617;
+  --bg-alt: #0F172A;
+  --accent: #22D3EE;
+  --accent-soft: rgba(34, 211, 238, 0.15);
+  --text-main: #E5E7EB;
+  --text-muted: #94A3B8;
+  --card-bg: #0F172A;
+  --border-subtle: #1E293B;
+}
+
+/* Theme 3: Graphite Black + Gold */
+[data-theme="gold"] {
+  --bg: #0A0A0A;
+  --bg-alt: #1A1A1A;
+  --accent: #FACC15;
+  --accent-soft: rgba(250, 204, 21, 0.15);
+  --text-main: #F5F5F5;
+  --text-muted: #D4D4D4;
+  --card-bg: #1A1A1A;
+  --border-subtle: #262626;
+}
+
+/* Theme 4: Slate Blue Gradient */
+[data-theme="slate"] {
+  --bg: #1E293B;
+  --bg-alt: #0F172A;
+  --accent: #38BDF8;
+  --accent-soft: rgba(56, 189, 248, 0.15);
+  --text-main: #E2E8F0;
+  --text-muted: #94A3B8;
+  --card-bg: #0F172A;
+  --border-subtle: #334155;
+}
+
+/* Theme 5: Deep Purple + Neon Teal */
+[data-theme="purple"] {
+  --bg: #1E1B4B;
+  --bg-alt: #0F172A;
+  --accent: #2DD4BF;
+  --accent-soft: rgba(45, 212, 191, 0.15);
+  --text-main: #E5E7EB;
+  --text-muted: #A5B4FC;
+  --card-bg: #0F172A;
+  --border-subtle: #312E81;
+}
+
+/* ---------------------------------------------------
+   GLOBAL STYLES
+--------------------------------------------------- */
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Floating Theme Switcher */
+.theme-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--bg-alt);
+  border: 1px solid var(--accent-soft);
+  padding: 8px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-soft);
+  z-index: 999;
+}
+
+.theme-menu {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background: var(--bg-alt);
+  border: 1px solid var(--accent-soft);
+  border-radius: 12px;
+  padding: 10px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+}
+
+.theme-menu button {
+  background: var(--card-bg);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.theme-menu button:hover {
+  background: var(--accent-soft);
+}
+
+/* Page container */
+.page {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Hero */
+.hero {
+  background: var(--bg-alt);
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  border: 1px solid var(--accent);
+  padding: 10px 18px;
+  border-radius: 999px;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Cards */
+.section {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.portfolio-item {
+  background: var(--bg-alt);
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+</style>
+
+</head>
+<body data-theme="midnight">
+
+<!-- Floating Theme Switcher -->
+<div class="theme-switcher" onclick="toggleThemeMenu()">🎨 Theme</div>
+
+<div class="theme-menu" id="themeMenu">
+  <button onclick="setTheme('charcoal')">Deep Charcoal</button>
+  <button onclick="setTheme('midnight')">Midnight Navy</button>
+  <button onclick="setTheme('gold')">Graphite Gold</button>
+  <button onclick="setTheme('slate')">Slate Blue</button>
+  <button onclick="setTheme('purple')">Deep Purple</button>
+</div>
+
+<script>
+function toggleThemeMenu() {
+  const menu = document.getElementById("themeMenu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+function setTheme(theme) {
+  document.body.setAttribute("data-theme", theme);
+  document.getElementById("themeMenu").style.display = "none";
+}
+</script>
+
+<div class="page">
+
+  <section class="hero">
+    <h1>Ashok — Web Developer & Technical Consultant</h1>
+    <p>I build fast, responsive, SEO‑ready websites and eCommerce stores using Wix, Shopify, WordPress, React, Vite, TypeScript, and Tailwind.</p>
+    <a class="btn-primary" href="#contact">Book a Free Call</a>
+    <a class="btn-secondary" href="#portfolio">View Portfolio</a>
+  </section>
+
+  <section class="section">
+    <div class="section-title">Services</div>
+    <p>Website development, eCommerce builds, automation tools, QA collaboration, and more.</p>
+  </section>
+
+  <section class="section" id="portfolio">
+    <div class="section-title">Portfolio</div>
+
+    <div class="portfolio-item">
+      <strong>MyBigNest.com</strong><br>
+      Real estate property management website.
+    </div>
+
+    <div class="portfolio-item">
+      <strong>VTUIT.com</strong><br>
+      Software training institute website.
+    </div>
+
+    <div class="portfolio-item">
+      <strong>NoLandsCakes.com</strong><br>
+      eCommerce migration from WordPress to Wix.
+    </div>
+
+  </section>
+
+  <section class="section" id="contact">
+    <div class="section-title">Contact</div>
+    <p>Email: youremail@example.com</p>
+    <p>Phone: +1 (XXX) XXX‑XXXX</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+  </section>
+
+  <footer>
+    © 2025 Ashok — Web Developer & Technical Consultant
+  </footer>
+
+</div>
+
+</body>
+</html>

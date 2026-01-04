@@ -1,755 +1,1463 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>[Your Name] - Legal Content Writer | AI-Resistant Blog Writing</title>
-    <meta name="description" content="Specializing in SEO-optimized legal blogs for personal injury law firms. Content that passes AI detection and converts readers into clients.">
-    <meta name="keywords" content="legal content writer, law firm blog writing, AI-resistant content, personal injury blogs, SEO legal content">
-    
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="[Your Name] - Legal Content Writer | AI-Resistant Blog Writing">
-    <meta property="og:description" content="Specializing in SEO-optimized legal blogs for personal injury law firms. Content that passes AI detection and converts readers into clients.">
-    <meta property="og:type" content="website">
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts - Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Google Analytics Placeholder (uncomment when ready) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID');
-    </script>
-    -->
-</head>
-<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
-    
-    <!-- Header/Navigation -->
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-sm transition-all duration-300">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16 md:h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#hero" class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                        [Your Name] - Legal Content Specialist
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#hero" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Home</a>
-                    <a href="#portfolio" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Samples</a>
-                    <a href="#services" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Services</a>
-                    <a href="#contact" class="nav-link text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400">Contact</a>
-                    <!-- Dark Mode Toggle -->
-                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-800" aria-label="Toggle dark mode">
-                        <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                    </button>
-                </div>
-                
-                <!-- Mobile Menu Button & Dark Mode Toggle -->
-                <div class="flex items-center space-x-2 md:hidden">
-                    <button id="dark-mode-toggle-mobile" class="p-2 rounded-lg text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400" aria-label="Toggle dark mode">
-                        <svg id="sun-icon-mobile" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                        <svg id="moon-icon-mobile" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                        </svg>
-                    </button>
-                    <button id="mobile-menu-btn" class="p-2 text-gray-700 hover:text-blue-600 transition-colors dark:text-gray-300 dark:hover:text-blue-400" aria-label="Toggle menu">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
-            <div class="px-4 py-4 space-y-4">
-                <a href="#hero" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
-                <a href="#portfolio" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Samples</a>
-                <a href="#services" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Services</a>
-                <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Contact</a>
-            </div>
-        </div>
-    </header>
-    
-    <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Animated Background -->
-        <div class="hero-background absolute inset-0"></div>
-        <div class="hero-mesh absolute inset-0"></div>
-        <div class="hero-grid absolute inset-0"></div>
-        <div class="hero-noise absolute inset-0"></div>
-        <div class="hero-orbs absolute inset-0">
-            <div class="orb orb-1"></div>
-            <div class="orb orb-2"></div>
-            <div class="orb orb-3"></div>
-        </div>
-        
-        <!-- Mouse Spotlight -->
-        <div id="mouse-spotlight" class="mouse-spotlight"></div>
-        
-        <!-- Content Container -->
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="grid lg:grid-cols-[55%_45%] gap-12 items-center">
-                
-                <!-- Left Column - Content -->
-                <div class="hero-content">
-                    <h1 class="hero-headline text-white mb-6">
-                        <span class="hero-line">Blog Content That</span>
-                        <span class="hero-line"><span class="gradient-text">Ranks</span>, <span class="gradient-text">Converts</span>, and <span class="gradient-text">Passes</span> Every</span>
-                        <span class="hero-line">AI Detector</span>
-                    </h1>
-                    
-                    <p class="hero-subheading text-gray-300 mb-8 max-w-2xl">
-                        I create SEO-optimized legal blogs that sound genuinely human—because they are.
-                    </p>
-                    
-                    <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="#portfolio" class="btn-primary group">
-                            View My Work
-                            <span class="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
-                        </a>
-                        <a href="#contact" class="btn-secondary">
-                            Get Free Sample
-                        </a>
-                    </div>
-                    
-                    <!-- Trust Indicators -->
-                    <div class="trust-badges flex flex-wrap gap-6">
-                        <div class="trust-badge">
-                            <span class="text-green-400 mr-2">✓</span>
-                            <span>15+ States Served</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="text-green-400 mr-2">✓</span>
-                            <span>13% Avg AI Score</span>
-                        </div>
-                        <div class="trust-badge">
-                            <span class="text-green-400 mr-2">✓</span>
-                            <span>48-Hour Delivery</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column - Metrics Dashboard -->
-                <div class="hero-visual hidden lg:block">
-                    <div class="metrics-cards">
-                        <!-- Card 1 - AI Detection Score -->
-                        <div class="metric-card card-1">
-                            <div class="metric-icon">✓</div>
-                            <div class="metric-value" id="ai-score">12%</div>
-                            <div class="metric-label">AI Detection Score</div>
-                            <div class="progress-ring">
-                                <svg class="progress-ring-svg" width="80" height="80">
-                                    <circle class="progress-ring-circle" cx="40" cy="40" r="36"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 2 - Grammar Score -->
-                        <div class="metric-card card-2">
-                            <div class="metric-icon">⭐</div>
-                            <div class="metric-value" id="grammar-score">98%</div>
-                            <div class="metric-label">Grammar Score</div>
-                            <div class="progress-bar">
-                                <div class="progress-bar-fill" id="grammar-progress"></div>
-                            </div>
-                        </div>
-                        
-                        <!-- Card 3 - Word Count -->
-                        <div class="metric-card card-3">
-                            <div class="metric-icon">📄</div>
-                            <div class="metric-value" id="word-count">0</div>
-                            <div class="metric-label">Average Word Count</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Indicator -->
-        <div id="scroll-indicator" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50">
-            <div class="flex flex-col items-center">
-                <span class="text-sm mb-2">Scroll to explore</span>
-                <svg class="w-6 h-6 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                </svg>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Problem/Solution Section -->
-    <section id="problem-solution" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Law Firms Face a Content Crisis</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Problems Column -->
-                <div class="problem-card p-8 bg-red-50 rounded-2xl border border-red-100">
-                    <h3 class="text-2xl font-bold text-red-900 dark:text-red-400 mb-6">The Problems</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">❌</span>
-                            <span class="text-gray-700 dark:text-gray-300">AI-generated content gets flagged by Google</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">❌</span>
-                            <span class="text-gray-700 dark:text-gray-300">Generic blogs don't convert readers to clients</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">❌</span>
-                            <span class="text-gray-700 dark:text-gray-300">Most writers don't understand legal nuances</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">❌</span>
-                            <span class="text-gray-700 dark:text-gray-300">Cookie-cutter content hurts SEO rankings</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Solutions Column -->
-                <div class="solution-card p-8 bg-green-50 rounded-2xl border border-green-100">
-                    <h3 class="text-2xl font-bold text-green-900 dark:text-green-400 mb-6">My Solutions</h3>
-                    <ul class="space-y-4">
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">✅</span>
-                            <span class="text-gray-700 dark:text-gray-300">I deliver blogs that pass AI detection (&lt;15%)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">✅</span>
-                            <span class="text-gray-700 dark:text-gray-300">Written for humans, optimized for search engines</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">✅</span>
-                            <span class="text-gray-700 dark:text-gray-300">Legal-specific knowledge across practice areas</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">✅</span>
-                            <span class="text-gray-700 dark:text-gray-300">Exact specifications: word count, anchor text, links</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Portfolio/Samples Section -->
-    <section id="portfolio" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Sample Work</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Sample 1 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-sm font-semibold rounded-full">Personal Injury</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Top 5 Tips for Choosing the Right Personal Injury Lawyer</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Van Nuys, CA</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 527 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 12% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="1">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Blog Sample 2 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-300 text-sm font-semibold rounded-full">Personal Injury</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Common Types of Cases a Personal Injury Lawyer Can Handle</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">St. Petersburg, FL</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 528 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 15% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="2">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Blog Sample 3 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-300 text-sm font-semibold rounded-full">Brain Injury</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Top 5 Common Causes of Traumatic Brain Injuries</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Portland, OR</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 526 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 14% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="3">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Blog Sample 4 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-300 text-sm font-semibold rounded-full">Truck Accidents</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Why Truck Accidents Are More Complicated Than Regular Car Accidents</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Seattle, WA</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 527 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 13% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="4">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Blog Sample 5 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-300 text-sm font-semibold rounded-full">Rideshare Accidents</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Key Benefits of Hiring a Rideshare Accident Attorney</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Portland, OR</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 530 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 11% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="5">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Blog Sample 6 -->
-                <div class="blog-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
-                    <div class="p-6">
-                        <div class="mb-4">
-                            <span class="inline-block px-3 py-1 bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-300 text-sm font-semibold rounded-full">Workplace Injury</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">Common Risks at Oil Refineries & Their Consequences</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-4">Houston, TX</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Word Count: 528 ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">AI Detection: 12% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Grammar: 98% ✓</span>
-                            <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 dark:text-gray-300 rounded">Readability: Grade 8 ✓</span>
-                        </div>
-                        <button class="blog-read-btn w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors" data-blog="6">
-                            Read Full Blog
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">What You Get</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">📝</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Word Count</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Exact 525-530 words</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">🤖</div>
-                        <h3 class="text-xl font-bold mb-2 dark:text-white">AI Detection</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Guaranteed under 15%</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">🔗</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">SEO Optimized</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Proper anchor text + links</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">📚</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Authoritative Links</h3>
-                    <p class="text-gray-600 dark:text-gray-400">2 U.S. sources</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">✍️</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Human Voice</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Natural, conversational tone</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Fast Delivery</h3>
-                    <p class="text-gray-600 dark:text-gray-400">24-48 hour turnaround</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">🔄</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Revisions</h3>
-                    <p class="text-gray-600 dark:text-gray-400">2 rounds included</p>
-                </div>
-                
-                <div class="service-card p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">Quality Reports</h3>
-                    <p class="text-gray-600 dark:text-gray-400">AI & grammar scores</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Process Section -->
-    <section id="process" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">How It Works</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="process-step text-center">
-                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Provide</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Title, anchor text, client link, location</p>
-                </div>
-                
-                <div class="process-step text-center">
-                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">I Deliver</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Draft blog within 24-48 hours</p>
-                </div>
-                
-                <div class="process-step text-center">
-                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Review</h3>
-                    <p class="text-gray-600 dark:text-gray-400">2 revision rounds included</p>
-                </div>
-                
-                <div class="process-step text-center">
-                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
-                    <h3 class="text-xl font-bold mb-2 dark:text-white">You Publish</h3>
-                    <p class="text-gray-600 dark:text-gray-400">Ready-to-use HTML format</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Transparent Pricing</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Pricing Card 1 -->
-                <div class="pricing-card p-8 bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl transition-all">
-                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Single Blog</h3>
-                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$100</div>
-                    <div class="text-gray-600 dark:text-gray-400 mb-6">per blog</div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">All features included</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">24-48 hour delivery</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">2 revision rounds</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
-                        Get Started
-                    </a>
-                </div>
-                
-                <!-- Pricing Card 2 - Popular -->
-                <div class="pricing-card p-8 bg-blue-50 border-2 border-blue-600 rounded-2xl hover:shadow-xl transition-all relative">
-                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">POPULAR</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Monthly Package</h3>
-                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$350</div>
-                    <div class="text-gray-600 dark:text-gray-400 mb-6">per month</div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">4 blogs per month</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">Priority delivery</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">All features included</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">Save $50/month</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
-                        Choose Plan
-                    </a>
-                </div>
-                
-                <!-- Pricing Card 3 -->
-                <div class="pricing-card p-8 bg-white border-2 border-gray-200 rounded-2xl hover:shadow-xl transition-all">
-                    <h3 class="text-2xl font-bold mb-4 dark:text-white">Bulk Discount</h3>
-                    <div class="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">$75</div>
-                    <div class="text-gray-600 dark:text-gray-400 mb-6">per blog</div>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">10+ blogs</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">Best value</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">All features included</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-500 mr-2">✓</span>
-                            <span class="dark:text-gray-300">Custom timeline</span>
-                        </li>
-                    </ul>
-                    <a href="#contact" class="block w-full py-3 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors">
-                        Contact Us
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">What Clients Say</h2>
-            
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
-                    Currently accepting first clients. Free sample blog for qualified law firms.
-                </p>
-                <p class="text-gray-500 dark:text-gray-400">
-                    This section will feature client testimonials as they become available.
-                </p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-4xl font-bold text-center mb-16 dark:text-white">Let's Work Together</h2>
-            
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Contact Form -->
-                <div>
-                    <form id="contact-form" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Full Name *</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email *</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="firm" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Law Firm Name *</label>
-                            <input type="text" id="firm" name="firm" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="phone" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Phone</label>
-                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                        </div>
-                        
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message/Project Details *</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold">
-                            Send Message
-                        </button>
-                        
-                        <div id="form-message" class="hidden mt-4 p-4 rounded-lg"></div>
-                    </form>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-bold mb-6 dark:text-white">Get in Touch</h3>
-                    <div class="space-y-6">
-                        <div>
-                            <h4 class="font-semibold mb-2 dark:text-gray-300">Email</h4>
-                            <a href="mailto:your@email.com" class="text-blue-600 dark:text-blue-400 hover:underline">your@email.com</a>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-2 dark:text-gray-300">Located in</h4>
-                            <p class="text-gray-600 dark:text-gray-400">[Your City, State]</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-2 dark:text-gray-300">Available</h4>
-                            <p class="text-gray-600 dark:text-gray-400">Monday-Friday, 9 AM - 6 PM EST</p>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-semibold mb-2 dark:text-gray-300">Connect</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300" aria-label="LinkedIn">
-                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">[Your Name] - Legal Content Specialist</h3>
-                    <p class="text-gray-400">Creating AI-resistant, SEO-optimized legal content for law firms.</p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition-colors">Samples</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 text-sm">© 2024 [Your Name]. All rights reserved.</p>
-                <button id="back-to-top" class="mt-4 md:mt-0 px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors">
-                    Back to Top ↑
-                </button>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Blog Modal -->
-    <div id="blog-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
-            <div class="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex justify-between items-center">
-                <h3 id="modal-title" class="text-2xl font-bold dark:text-white"></h3>
-                <button id="modal-close" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-2xl" aria-label="Close">×</button>
-            </div>
-            <div id="modal-content" class="p-6 prose max-w-none dark:prose-invert">
-                <!-- Blog content will be inserted here -->
-            </div>
-        </div>
-    </div>
-    
-    <!-- Blog Content Data (hidden, for JavaScript) -->
-    <script type="application/json" id="blog-data">
-    {
-        "1": {
-            "title": "Top 5 Tips for Choosing the Right Personal Injury Lawyer",
-            "location": "Van Nuys, CA",
-            "content": "<p>[Placeholder content - Replace with your actual Van Nuys blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        },
-        "2": {
-            "title": "Common Types of Cases a Personal Injury Lawyer Can Handle",
-            "location": "St. Petersburg, FL",
-            "content": "<p>[Placeholder content - Replace with your actual St. Petersburg blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        },
-        "3": {
-            "title": "Top 5 Common Causes of Traumatic Brain Injuries",
-            "location": "Portland, OR",
-            "content": "<p>[Placeholder content - Replace with your actual Portland brain injury blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        },
-        "4": {
-            "title": "Why Truck Accidents Are More Complicated Than Regular Car Accidents",
-            "location": "Seattle, WA",
-            "content": "<p>[Placeholder content - Replace with your actual Seattle truck accident blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        },
-        "5": {
-            "title": "Key Benefits of Hiring a Rideshare Accident Attorney",
-            "location": "Portland, OR",
-            "content": "<p>[Placeholder content - Replace with your actual Portland rideshare blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        },
-        "6": {
-            "title": "Common Risks at Oil Refineries & Their Consequences",
-            "location": "Houston, TX",
-            "content": "<p>[Placeholder content - Replace with your actual Houston refinery blog content]</p><p>This is where the full blog content will appear. Replace this placeholder with the actual blog text you've written.</p>"
-        }
+  <meta charset="UTF-8" />
+  <title>Ashok – Web Developer & Technical Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Modern websites and eCommerce solutions using Wix, Shopify, WordPress, React, Vite, TypeScript, and Tailwind."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+      --border-subtle: #1f2937;
+      --danger: #f97373;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      /* Theme-dependent variables */
+      --body-bg-start: #1e293b;
+      --body-bg-mid: #020617;
+      --body-bg-end: #000;
+      --hero-bg-start: #0ea5e9;
+      --hero-bg-mid: #020617;
+      --hero-bg-end: #000;
+      --section-bg-start: #1e293b;
+      --section-bg-mid: #020617;
+      --section-bg-end: #000;
+      --contact-bg-start: #1e293b;
+      --contact-bg-mid: #020617;
+      --contact-bg-end: #000;
+      --brand-badge-start: #38bdf8;
+      --brand-badge-mid: #0f172a;
+      --brand-badge-end: #020617;
+      --accent-rgb: 56, 189, 248;
+      --card-bg-rgba: rgba(15, 23, 42, 0.9);
+      --card-bg-alt-rgba: rgba(2, 6, 23, 0.9);
+      --border-color-rgba: rgba(30, 64, 175, 0.6);
+      --btn-primary-start: #22d3ee;
+      --btn-primary-end: #0ea5e9;
+      --btn-primary-shadow: rgba(8, 47, 73, 0.9);
     }
-    </script>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, var(--body-bg-start) 0, var(--body-bg-mid) 45%, var(--body-bg-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    header {
+      padding: 16px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, var(--brand-badge-start) 0, var(--brand-badge-mid) 55%, var(--brand-badge-end) 100%);
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .header-tag {
+      background: var(--card-bg-rgba);
+      border-radius: 999px;
+      padding: 6px 12px;
+      border: 1px solid var(--border-subtle);
+      transition: background 0.3s ease;
+    }
+
+    .header-cta {
+      border-radius: 999px;
+      padding: 8px 16px;
+      border: 1px solid var(--accent-soft);
+      background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.1),
+        var(--card-bg-rgba)
+      );
+      color: var(--accent);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.3s ease;
+    }
     
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    .theme-selector {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .theme-selector-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: var(--card-bg-rgba);
+      color: var(--text-main);
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .theme-selector-btn:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+      border-color: var(--accent-soft);
+    }
+    
+    .theme-selector-btn::after {
+      content: "▼";
+      font-size: 10px;
+      opacity: 0.7;
+    }
+    
+    .theme-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 180px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .theme-dropdown.active {
+      display: flex;
+    }
+    
+    .theme-option {
+      padding: 10px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      color: var(--text-main);
+      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .theme-option:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+    }
+    
+    .theme-option.active {
+      background: rgba(var(--accent-rgb), 0.15);
+      color: var(--accent);
+    }
+    
+    .theme-color-preview {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .header-cta span {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 24px;
+      margin-top: 12px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 880px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-links {
+        justify-content: flex-start;
+      }
+      
+      .theme-dropdown {
+        right: auto;
+        left: 0;
+      }
+    }
+
+    .hero {
+      background: radial-gradient(circle at 0 0, var(--hero-bg-start) 0, var(--hero-bg-mid) 42%, var(--hero-bg-end) 110%);
+      border-radius: 18px;
+      padding: 28px 24px 28px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+        circle at 110% -10%,
+        rgba(var(--accent-rgb), 0.25),
+        transparent 45%
+      );
+      opacity: 0.9;
+      pointer-events: none;
+      transition: background 0.3s ease;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: var(--card-bg-rgba);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 13px;
+      color: #e5e7eb;
+      margin-bottom: 10px;
+      backdrop-filter: blur(12px);
+      transition: background 0.3s ease;
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.7);
+    }
+
+    .hero-pill span {
+      color: var(--text-muted);
+    }
+
+    .hero h2 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+      max-width: 700px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero h2 span {
+      color: #f9fafb;
+      font-weight: 700;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      color: #e5e7eb;
+      max-width: 650px;
+      margin-bottom: 18px;
+    }
+
+    .hero-highlight {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .hero-chip {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: var(--card-bg-rgba);
+      color: #cbd5f5;
+      transition: background 0.3s ease;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
+      color: #0f172a;
+      font-weight: 600;
+      box-shadow:
+        0 10px 30px var(--btn-primary-shadow),
+        0 0 0 1px rgba(var(--accent-rgb), 0.4) inset;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.03);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background: var(--card-bg-rgba);
+      border-color: rgba(148, 163, 184, 0.7);
+      color: #e5e7eb;
+      transition: background 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(15, 23, 42, 0.95);
+      text-decoration: none;
+    }
+
+    .hero-note {
+      font-size: 13px;
+      color: #cbd5f5;
+      opacity: 0.9;
+    }
+
+    .hero-note span {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .hero-right {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      text-align: right;
+      font-size: 13px;
+      color: #e5e7eb;
+      opacity: 0.85;
+    }
+
+    .hero-right-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--card-bg-rgba);
+      margin-bottom: 4px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      backdrop-filter: blur(12px);
+      transition: background 0.3s ease;
+    }
+
+    .hero-right-dot span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    .hero-right small {
+      display: block;
+      color: #cbd5f5;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 20px 20px 24px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 0 -40%, var(--section-bg-start) 0, var(--section-bg-mid) 42%, var(--section-bg-end) 110%);
+      border: 1px solid var(--border-color-rgba);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .section + .section {
+      margin-top: 14px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .about-text {
+      font-size: 15px;
+      color: #e5e7eb;
+    }
+
+    .pill-row {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-size: 13px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: var(--card-bg-rgba);
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      color: #cbd5f5;
+      transition: background 0.3s ease;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .service-card {
+      background: var(--card-bg-rgba);
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--border-color-rgba);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .service-tag {
+      font-size: 13px;
+      border-radius: 999px;
+      padding: 4px 9px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      color: #cbd5f5;
+      background: var(--card-bg-alt-rgba);
+      transition: background 0.3s ease;
+    }
+
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .portfolio-item {
+      background: var(--card-bg-rgba);
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color-rgba);
+      font-size: 14px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .portfolio-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .portfolio-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .portfolio-type {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .portfolio-link {
+      font-size: 13px;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .portfolio-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .portfolio-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .portfolio-btn-row span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .portfolio-btn-row a {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: var(--card-bg-rgba);
+      text-decoration: none;
+      color: #e5e7eb;
+      transition: background 0.3s ease;
+    }
+
+    .portfolio-btn-row a:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+    }
+
+    .why-list {
+      list-style: none;
+      margin-top: 6px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 3px;
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .why-list li::before {
+      content: "•";
+      color: var(--accent);
+      display: inline-block;
+      width: 10px;
+      margin-right: 4px;
+    }
+
+    @media (min-width: 640px) {
+      .why-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .contact-section {
+      margin-top: 18px;
+      padding: 20px 20px 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border-color-rgba);
+      background: radial-gradient(circle at 0 -50%, var(--contact-bg-start) 0, var(--contact-bg-mid) 46%, var(--contact-bg-end) 120%);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact-heading {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .contact-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 720px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-details {
+      font-size: 14px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .contact-details span {
+      color: var(--text-muted);
+    }
+
+    .contact-details a {
+      font-size: 14px;
+    }
+
+    .contact-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      align-items: flex-start;
+    }
+
+    .contact-note {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .contact-note strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .side-column {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .side-card {
+      padding: 16px 16px 18px;
+      border-radius: 14px;
+      background: var(--card-bg-rgba);
+      border: 1px solid var(--border-color-rgba);
+      font-size: 14px;
+      color: #e5e7eb;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .side-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .side-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .side-pill {
+      font-size: 13px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(51, 65, 85, 0.9);
+      color: #cbd5f5;
+      background: var(--card-bg-alt-rgba);
+      transition: background 0.3s ease;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color-rgba);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      transition: border-color 0.3s ease;
+    }
+
+    footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+          <div class="brand-badge">A</div>
+          <div class="brand-text">
+            <h1>Ashok</h1>
+            <span>Web Developer &amp; Technical Consultant</span>
+          </div>
+        </a>
+      </div>
+      <div class="header-links">
+        <a href="blog-content.html" style="font-size: 13px; color: var(--text-muted); text-decoration: none; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--card-bg-rgba); transition: background 0.3s ease;">Blog content</a>
+        <div class="header-tag">Available for freelance &amp; collaboration</div>
+        <div class="theme-selector">
+          <button class="theme-selector-btn" id="themeSelectorBtn">Theme</button>
+          <div class="theme-dropdown" id="themeDropdown">
+            <div class="theme-option active" data-theme="dark-blue">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #0f172a, #38bdf8);"></span>
+              <span>Dark Blue</span>
+            </div>
+            <div class="theme-option" data-theme="dark-green">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #064e3b, #10b981);"></span>
+              <span>Dark Green</span>
+            </div>
+            <div class="theme-option" data-theme="dark-purple">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #1e1b4b, #a855f7);"></span>
+              <span>Dark Purple</span>
+            </div>
+            <div class="theme-option" data-theme="dark-gray">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #1f2937, #6b7280);"></span>
+              <span>Dark Gray</span>
+            </div>
+            <div class="theme-option" data-theme="dark-teal">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #0f766e, #14b8a6);"></span>
+              <span>Dark Teal</span>
+            </div>
+            <div class="theme-option" data-theme="warm-dark">
+              <span class="theme-color-preview" style="background: linear-gradient(135deg, #451a03, #f59e0b);"></span>
+              <span>Warm Dark</span>
+            </div>
+          </div>
+        </div>
+        <a class="header-cta" href="#contact">
+          <span>Primary CTA</span>
+          Book a free consultation
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-inner">
+          <div class="hero-pill">
+            <div class="hero-pill-dot"></div>
+            <strong>Modern websites &amp; eCommerce</strong>
+            <span>for service businesses &amp; brands</span>
+          </div>
+
+          <h2>
+            <span>Fast, clean, conversion‑ready websites</span><br />
+            for businesses that want their online presence to actually work.
+          </h2>
+
+          <p class="hero-sub">
+            I design and build responsive, SEO‑ready websites and eCommerce experiences using
+            Wix, Shopify, WordPress, React, Vite, TypeScript, and Tailwind. I also provide
+            Digital Marketing and Blog content writing services —
+            aligned with your brand and built to turn visitors into leads and customers.
+          </p>
+
+          <div class="hero-highlight">
+            <div class="hero-chip">Wix · Shopify · WordPress</div>
+            <div class="hero-chip">React · Vite · TypeScript · Tailwind</div>
+            <div class="hero-chip">Real estate · Training · eCommerce</div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn-primary" href="#contact">Book a free 20‑minute call</a>
+            <a class="btn-secondary" href="#portfolio">View live portfolio</a>
+          </div>
+
+          <div class="hero-note">
+            <span>Bonus:</span> Free homepage or store audit for the first consultation booked from this QR code.
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+            <img src="qrcode-Ashok-Portfolio.png" alt="QR Code - Ashok Portfolio" style="max-width: 120px; width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(148, 163, 184, 0.3);">
+          </div>
+          <div class="hero-right-dot">
+            <span></span>
+            <strong>QR landing page</strong>
+          </div>
+          <small>Scan · View work · Get in touch</small>
+        </div>
+      </section>
+
+      <div class="layout">
+        <div>
+          <!-- About -->
+          <section class="section" id="about">
+            <div class="section-header">
+              <div class="section-title">About</div>
+              <div class="section-sub">Technical + design focused</div>
+            </div>
+            <p class="about-text">
+              I’m Ashok, a versatile web developer and technical consultant focused on clear,
+              reliable, and business‑aligned delivery. I work with small businesses, real estate
+              firms, eCommerce brands, and IT teams to build responsive, user‑friendly websites
+              and stores that feel modern and perform well.
+            </p>
+            <p class="about-text" style="margin-top: 6px;">
+              My approach is simple: understand your goals, design a clean experience, and ship
+              fast with solid technical foundations so your site is easy to maintain and scale.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill">Client‑first communication</div>
+              <div class="pill">Clean, maintainable builds</div>
+              <div class="pill">SEO‑ready structure</div>
+              <div class="pill">Collaboration with IT teams</div>
+            </div>
+          </section>
+
+          <!-- Services -->
+          <section class="section" id="services">
+            <div class="section-header">
+              <div class="section-title">Services</div>
+              <div class="section-sub">What I can help you with</div>
+            </div>
+
+            <div class="services-grid">
+              <div class="service-card">
+                <div class="service-title">Website development</div>
+                <div class="service-desc">
+                  Custom, responsive sites that reflect your brand and make it easy for visitors to contact you.
+                </div>
+                <div class="service-tags">
+                  <span class="service-tag">Wix websites</span>
+                  <span class="service-tag">WordPress builds</span>
+                  <span class="service-tag">React frontends</span>
+                  <span class="service-tag">Business landing pages</span>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-title">eCommerce solutions</div>
+                <div class="service-desc">
+                  Stores that are easy to manage, optimized for checkout, and ready to accept payments securely.
+                </div>
+                <div class="service-tags">
+                  <span class="service-tag">Shopify setups</span>
+                  <span class="service-tag">Product integration</span>
+                  <span class="service-tag">Payment gateways</span>
+                  <span class="service-tag">Store migrations</span>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-title">Technical toolkit &amp; automation</div>
+                <div class="service-desc">
+                  Smart workflows to save time — from bulk content prep to light automation and integration support.
+                </div>
+                <div class="service-tags">
+                  <span class="service-tag">Web scraping</span>
+                  <span class="service-tag">Bulk image processing</span>
+                  <span class="service-tag">PDF → JPG pipelines</span>
+                  <span class="service-tag">AI‑assisted coding</span>
+                </div>
+              </div>
+
+              <div class="service-card">
+                <div class="service-title">Collaboration &amp; QA</div>
+                <div class="service-desc">
+                  Working alongside your IT team or designer to troubleshoot, test, and deploy projects smoothly.
+                </div>
+                <div class="service-tags">
+                  <span class="service-tag">Bug fixing</span>
+                  <span class="service-tag">Cross‑device testing</span>
+                  <span class="service-tag">Deployment support</span>
+                  <span class="service-tag">Ongoing updates</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Portfolio -->
+          <section class="section" id="portfolio">
+            <div class="section-header">
+              <div class="section-title">Portfolio</div>
+              <div class="section-sub">Live examples &amp; ongoing work</div>
+            </div>
+
+            <div class="portfolio-list">
+              <div class="portfolio-item">
+                <div class="portfolio-top">
+                  <div class="portfolio-name">MyBigNest.com</div>
+                  <div class="portfolio-type">Real estate · Property management</div>
+                </div>
+                <div class="portfolio-link">
+                  <a href="https://mybignest.com" target="_blank" rel="noopener">https://mybignest.com</a>
+                </div>
+                <p class="portfolio-note">
+                  Responsive site for a property management and real estate solutions business, focused on clarity and lead capture.
+                </p>
+              </div>
+
+              <div class="portfolio-item">
+                <div class="portfolio-top">
+                  <div class="portfolio-name">VTUIT.com</div>
+                  <div class="portfolio-type">Software training institute</div>
+                </div>
+                <div class="portfolio-link">
+                  <a href="https://vtuit.com" target="_blank" rel="noopener">https://vtuit.com</a>
+                </div>
+                <p class="portfolio-note">
+                  Clean layout to present courses, highlight key programs, and make enrollment inquiries straightforward.
+                </p>
+              </div>
+
+              <div class="portfolio-item">
+                <div class="portfolio-top">
+                  <div class="portfolio-name">NoLandsCakes.com</div>
+                  <div class="portfolio-type">eCommerce · Bakery</div>
+                </div>
+                <div class="portfolio-link">
+                  <a href="https://nolandscakes.com" target="_blank" rel="noopener">https://nolandscakes.com</a>
+                </div>
+                <p class="portfolio-note">
+                  Migration from WordPress to Wix with product integration and a simplified order experience for customers.
+                </p>
+              </div>
+
+              <div class="portfolio-item">
+                <div class="portfolio-top">
+                  <div class="portfolio-name">Legal Content Portfolio</div>
+                  <div class="portfolio-type">Content Writing · Digital Marketing</div>
+                </div>
+                <div class="portfolio-link">
+                  <a href="https://ashokkaringal.github.io/legal-content-portfolio/" target="_blank" rel="noopener">https://ashokkaringal.github.io/legal-content-portfolio/</a>
+                </div>
+                <p class="portfolio-note">
+                  SEO-optimized legal blog content writing portfolio showcasing AI-resistant content, blog samples, and digital marketing services for law firms.
+                </p>
+              </div>
+
+              <div class="portfolio-item">
+                <div class="portfolio-top">
+                  <div class="portfolio-name">Real estate project (in progress)</div>
+                  <div class="portfolio-type">Property listings · Oracle Cloud</div>
+                </div>
+                <p class="portfolio-note">
+                  Ongoing development hosted on Oracle Cloud, focused on showcasing properties with a fast, search‑friendly frontend.
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio-btn-row">
+              <span>Want a similar site or store?</span>
+              <a href="#contact">Request a quick call</a>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Side column -->
+        <aside class="side-column">
+          <div class="side-card">
+            <div class="side-title">Best fit projects</div>
+            <p>
+              I’m a good fit if you need a clear, modern online presence and want someone who can handle both the technical and presentation side.
+            </p>
+            <div class="side-pills">
+              <div class="side-pill">Service business websites</div>
+              <div class="side-pill">Real estate &amp; property</div>
+              <div class="side-pill">Coaches &amp; training institutes</div>
+              <div class="side-pill">Small eCommerce brands</div>
+            </div>
+          </div>
+
+          <div class="side-card">
+            <div class="side-title">Working style</div>
+            <p>
+              I like to keep things structured and simple: short discovery call, clear scope, transparent timelines,
+              and regular check‑ins, so you always know what’s happening with your project.
+            </p>
+            <p class="note">
+              Available for: single projects, retainers for ongoing updates, and white‑label collaboration with agencies.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <div class="side-title">Tech stack</div>
+            <div class="side-pills">
+              <div class="side-pill">Wix</div>
+              <div class="side-pill">Shopify</div>
+              <div class="side-pill">WordPress</div>
+              <div class="side-pill">React</div>
+              <div class="side-pill">Vite</div>
+              <div class="side-pill">TypeScript</div>
+              <div class="side-pill">Tailwind CSS</div>
+              <div class="side-pill">Oracle Cloud (hosting)</div>
+            </div>
+          </div>
+
+          <!-- Why work with me -->
+          <div class="side-card" id="why">
+            <div class="side-title">Why work with me</div>
+            <div class="section-sub" style="font-size: 12px; color: var(--text-muted); margin-bottom: 8px;">What clients usually appreciate</div>
+            <ul class="why-list" style="list-style: none; margin-top: 8px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--text-main); padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>Fast turnaround with clear milestones</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>Mobile‑first, responsive designs</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>SEO‑friendly structures from day one</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>Transparent communication &amp; updates</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>Technical precision with a clean UI</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--accent);">•</span>
+                <span>Collaboration with your existing team</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="side-card" id="contact">
+            <div class="side-title">Let's build something useful together</div>
+            <p class="contact-sub" style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px;">
+              Send a quick message or book a short call — we'll clarify your goals and pick the simplest way to get you live.
+            </p>
+
+            <div style="margin-bottom: 12px;">
+              <div style="font-size: 13px; margin-bottom: 8px;">
+                <span style="color: var(--text-muted);">Email:</span>
+                <a href="mailto:ashok.karingal@gmail.com" style="color: var(--accent); margin-left: 6px;">ashok.karingal@gmail.com</a>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div class="btn-primary" style="text-align: center; width: 100%; cursor: default;">
+                Book a free 20‑minute consultation
+              </div>
+              <div style="display: flex; justify-content: center; margin: 12px 0;">
+                <img src="qrcode-Ashok-Portfolio.png" alt="QR Code - Ashok Portfolio" style="max-width: 200px; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              </div>
+              <p class="contact-note" style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">
+                <strong style="color: var(--text-main);">From this QR code:</strong> we can review your existing site or idea, discuss options, and outline a
+                simple roadmap — no obligation.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
+      <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
+    </footer>
+  </div>
+  
+  <script>
+    // Theme definitions
+    const themes = {
+      'dark-blue': {
+        bg: '#0f172a',
+        bgAlt: '#020617',
+        accent: '#38bdf8',
+        accentSoft: 'rgba(56, 189, 248, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#020617',
+        borderSubtle: '#1f2937',
+        bodyBgStart: '#1e293b',
+        bodyBgMid: '#020617',
+        bodyBgEnd: '#000',
+        heroBgStart: '#0ea5e9',
+        heroBgMid: '#020617',
+        heroBgEnd: '#000',
+        sectionBgStart: '#1e293b',
+        sectionBgMid: '#020617',
+        sectionBgEnd: '#000',
+        contactBgStart: '#1e293b',
+        contactBgMid: '#020617',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#38bdf8',
+        brandBadgeMid: '#0f172a',
+        brandBadgeEnd: '#020617',
+        accentRgb: '56, 189, 248',
+        cardBgRgba: 'rgba(15, 23, 42, 0.9)',
+        cardBgAltRgba: 'rgba(2, 6, 23, 0.9)',
+        borderColorRgba: 'rgba(30, 64, 175, 0.6)',
+        btnPrimaryStart: '#22d3ee',
+        btnPrimaryEnd: '#0ea5e9',
+        btnPrimaryShadow: 'rgba(8, 47, 73, 0.9)'
+      },
+      'dark-green': {
+        bg: '#064e3b',
+        bgAlt: '#022c22',
+        accent: '#10b981',
+        accentSoft: 'rgba(16, 185, 129, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#022c22',
+        borderSubtle: '#065f46',
+        bodyBgStart: '#065f46',
+        bodyBgMid: '#022c22',
+        bodyBgEnd: '#000',
+        heroBgStart: '#10b981',
+        heroBgMid: '#022c22',
+        heroBgEnd: '#000',
+        sectionBgStart: '#065f46',
+        sectionBgMid: '#022c22',
+        sectionBgEnd: '#000',
+        contactBgStart: '#065f46',
+        contactBgMid: '#022c22',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#10b981',
+        brandBadgeMid: '#064e3b',
+        brandBadgeEnd: '#022c22',
+        accentRgb: '16, 185, 129',
+        cardBgRgba: 'rgba(6, 78, 59, 0.9)',
+        cardBgAltRgba: 'rgba(2, 44, 34, 0.9)',
+        borderColorRgba: 'rgba(5, 150, 105, 0.6)',
+        btnPrimaryStart: '#34d399',
+        btnPrimaryEnd: '#10b981',
+        btnPrimaryShadow: 'rgba(5, 150, 105, 0.9)'
+      },
+      'dark-purple': {
+        bg: '#1e1b4b',
+        bgAlt: '#0f172a',
+        accent: '#a855f7',
+        accentSoft: 'rgba(168, 85, 247, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#0f172a',
+        borderSubtle: '#312e81',
+        bodyBgStart: '#312e81',
+        bodyBgMid: '#0f172a',
+        bodyBgEnd: '#000',
+        heroBgStart: '#a855f7',
+        heroBgMid: '#0f172a',
+        heroBgEnd: '#000',
+        sectionBgStart: '#312e81',
+        sectionBgMid: '#0f172a',
+        sectionBgEnd: '#000',
+        contactBgStart: '#312e81',
+        contactBgMid: '#0f172a',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#a855f7',
+        brandBadgeMid: '#1e1b4b',
+        brandBadgeEnd: '#0f172a',
+        accentRgb: '168, 85, 247',
+        cardBgRgba: 'rgba(30, 27, 75, 0.9)',
+        cardBgAltRgba: 'rgba(15, 23, 42, 0.9)',
+        borderColorRgba: 'rgba(109, 40, 217, 0.6)',
+        btnPrimaryStart: '#c084fc',
+        btnPrimaryEnd: '#a855f7',
+        btnPrimaryShadow: 'rgba(109, 40, 217, 0.9)'
+      },
+      'dark-gray': {
+        bg: '#1f2937',
+        bgAlt: '#111827',
+        accent: '#6b7280',
+        accentSoft: 'rgba(107, 114, 128, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#111827',
+        borderSubtle: '#374151',
+        bodyBgStart: '#374151',
+        bodyBgMid: '#111827',
+        bodyBgEnd: '#000',
+        heroBgStart: '#6b7280',
+        heroBgMid: '#111827',
+        heroBgEnd: '#000',
+        sectionBgStart: '#374151',
+        sectionBgMid: '#111827',
+        sectionBgEnd: '#000',
+        contactBgStart: '#374151',
+        contactBgMid: '#111827',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#6b7280',
+        brandBadgeMid: '#1f2937',
+        brandBadgeEnd: '#111827',
+        accentRgb: '107, 114, 128',
+        cardBgRgba: 'rgba(31, 41, 55, 0.9)',
+        cardBgAltRgba: 'rgba(17, 24, 39, 0.9)',
+        borderColorRgba: 'rgba(75, 85, 99, 0.6)',
+        btnPrimaryStart: '#9ca3af',
+        btnPrimaryEnd: '#6b7280',
+        btnPrimaryShadow: 'rgba(55, 65, 81, 0.9)'
+      },
+      'dark-teal': {
+        bg: '#0f766e',
+        bgAlt: '#042f2e',
+        accent: '#14b8a6',
+        accentSoft: 'rgba(20, 184, 166, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#042f2e',
+        borderSubtle: '#134e4a',
+        bodyBgStart: '#134e4a',
+        bodyBgMid: '#042f2e',
+        bodyBgEnd: '#000',
+        heroBgStart: '#14b8a6',
+        heroBgMid: '#042f2e',
+        heroBgEnd: '#000',
+        sectionBgStart: '#134e4a',
+        sectionBgMid: '#042f2e',
+        sectionBgEnd: '#000',
+        contactBgStart: '#134e4a',
+        contactBgMid: '#042f2e',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#14b8a6',
+        brandBadgeMid: '#0f766e',
+        brandBadgeEnd: '#042f2e',
+        accentRgb: '20, 184, 166',
+        cardBgRgba: 'rgba(15, 118, 110, 0.9)',
+        cardBgAltRgba: 'rgba(4, 47, 46, 0.9)',
+        borderColorRgba: 'rgba(19, 78, 74, 0.6)',
+        btnPrimaryStart: '#5eead4',
+        btnPrimaryEnd: '#14b8a6',
+        btnPrimaryShadow: 'rgba(19, 78, 74, 0.9)'
+      },
+      'warm-dark': {
+        bg: '#451a03',
+        bgAlt: '#1c1917',
+        accent: '#f59e0b',
+        accentSoft: 'rgba(245, 158, 11, 0.15)',
+        textMain: '#e5e7eb',
+        textMuted: '#9ca3af',
+        cardBg: '#1c1917',
+        borderSubtle: '#78350f',
+        bodyBgStart: '#78350f',
+        bodyBgMid: '#1c1917',
+        bodyBgEnd: '#000',
+        heroBgStart: '#f59e0b',
+        heroBgMid: '#1c1917',
+        heroBgEnd: '#000',
+        sectionBgStart: '#78350f',
+        sectionBgMid: '#1c1917',
+        sectionBgEnd: '#000',
+        contactBgStart: '#78350f',
+        contactBgMid: '#1c1917',
+        contactBgEnd: '#000',
+        brandBadgeStart: '#f59e0b',
+        brandBadgeMid: '#451a03',
+        brandBadgeEnd: '#1c1917',
+        accentRgb: '245, 158, 11',
+        cardBgRgba: 'rgba(69, 26, 3, 0.9)',
+        cardBgAltRgba: 'rgba(28, 25, 23, 0.9)',
+        borderColorRgba: 'rgba(120, 53, 15, 0.6)',
+        btnPrimaryStart: '#fbbf24',
+        btnPrimaryEnd: '#f59e0b',
+        btnPrimaryShadow: 'rgba(120, 53, 15, 0.9)'
+      }
+    };
+
+    // Apply theme function
+    function applyTheme(themeName) {
+      const theme = themes[themeName];
+      if (!theme) return;
+
+      const root = document.documentElement;
+      root.style.setProperty('--bg', theme.bg);
+      root.style.setProperty('--bg-alt', theme.bgAlt);
+      root.style.setProperty('--accent', theme.accent);
+      root.style.setProperty('--accent-soft', theme.accentSoft);
+      root.style.setProperty('--text-main', theme.textMain);
+      root.style.setProperty('--text-muted', theme.textMuted);
+      root.style.setProperty('--card-bg', theme.cardBg);
+      root.style.setProperty('--border-subtle', theme.borderSubtle);
+      root.style.setProperty('--body-bg-start', theme.bodyBgStart);
+      root.style.setProperty('--body-bg-mid', theme.bodyBgMid);
+      root.style.setProperty('--body-bg-end', theme.bodyBgEnd);
+      root.style.setProperty('--hero-bg-start', theme.heroBgStart);
+      root.style.setProperty('--hero-bg-mid', theme.heroBgMid);
+      root.style.setProperty('--hero-bg-end', theme.heroBgEnd);
+      root.style.setProperty('--section-bg-start', theme.sectionBgStart);
+      root.style.setProperty('--section-bg-mid', theme.sectionBgMid);
+      root.style.setProperty('--section-bg-end', theme.sectionBgEnd);
+      root.style.setProperty('--contact-bg-start', theme.contactBgStart);
+      root.style.setProperty('--contact-bg-mid', theme.contactBgMid);
+      root.style.setProperty('--contact-bg-end', theme.contactBgEnd);
+      root.style.setProperty('--brand-badge-start', theme.brandBadgeStart);
+      root.style.setProperty('--brand-badge-mid', theme.brandBadgeMid);
+      root.style.setProperty('--brand-badge-end', theme.brandBadgeEnd);
+      root.style.setProperty('--accent-rgb', theme.accentRgb);
+      root.style.setProperty('--card-bg-rgba', theme.cardBgRgba);
+      root.style.setProperty('--card-bg-alt-rgba', theme.cardBgAltRgba);
+      root.style.setProperty('--border-color-rgba', theme.borderColorRgba);
+      root.style.setProperty('--btn-primary-start', theme.btnPrimaryStart);
+      root.style.setProperty('--btn-primary-end', theme.btnPrimaryEnd);
+      root.style.setProperty('--btn-primary-shadow', theme.btnPrimaryShadow);
+
+      // Update active state in dropdown
+      document.querySelectorAll('.theme-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.dataset.theme === themeName) {
+          option.classList.add('active');
+        }
+      });
+
+      // Save to localStorage
+      localStorage.setItem('selectedTheme', themeName);
+    }
+
+    // Initialize theme selector
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeSelectorBtn = document.getElementById('themeSelectorBtn');
+      const themeDropdown = document.getElementById('themeDropdown');
+      const themeOptions = document.querySelectorAll('.theme-option');
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem('selectedTheme') || 'dark-blue';
+      applyTheme(savedTheme);
+
+      // Toggle dropdown
+      themeSelectorBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        themeDropdown.classList.toggle('active');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!themeSelectorBtn.contains(e.target) && !themeDropdown.contains(e.target)) {
+          themeDropdown.classList.remove('active');
+        }
+      });
+
+      // Handle theme selection
+      themeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          const themeName = this.dataset.theme;
+          applyTheme(themeName);
+          themeDropdown.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
-
