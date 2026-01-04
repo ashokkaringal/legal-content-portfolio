@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services - Ashok – Web Developer & Technical Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Complete end-to-end development services including eCommerce, web applications, deployment, and optimization."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-secondary: #8b5cf6;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+      --border-subtle: #1f2937;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --body-bg-start: #1e293b;
+      --body-bg-mid: #020617;
+      --body-bg-end: #000;
+      --brand-badge-start: #38bdf8;
+      --brand-badge-mid: #0f172a;
+      --brand-badge-end: #020617;
+      --accent-rgb: 56, 189, 248;
+      --card-bg-rgba: rgba(15, 23, 42, 0.9);
+      --border-color-rgba: rgba(30, 64, 175, 0.6);
+      --btn-primary-start: #22d3ee;
+      --btn-primary-end: #0ea5e9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 20%, #020617 60%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    header {
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, var(--brand-badge-start) 0, var(--brand-badge-mid) 55%, var(--brand-badge-end) 100%);
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 20px;
+      box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    
+    .header-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+    
+    .header-nav a:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+      color: var(--accent);
+    }
+
+    @media (max-width: 880px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px;
+      }
+      
+      .header-nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        gap: 6px;
+      }
+    }
+
+    /* Hero Section */
+    .services-hero {
+      padding: 100px 32px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .services-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .services-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .services-hero p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Services Section */
+    .services-section {
+      padding: 80px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .service-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.3);
+    }
+
+    .service-icon {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(139, 92, 246, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-icon::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%),
+        radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.3), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover .service-icon::before {
+      opacity: 1;
+    }
+
+    .service-content {
+      padding: 28px;
+    }
+
+    .service-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .service-description {
+      color: var(--text-muted);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* CTA Section */
+    .services-cta {
+      padding: 80px 32px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .services-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .services-cta h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .services-cta p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
+      color: #0f172a;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.4);
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 0;
+      padding: 40px 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    footer span {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .services-hero {
+        padding: 80px 24px 60px;
+      }
+
+      .services-section {
+        padding: 60px 24px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+          <div class="brand-badge">A</div>
+          <div class="brand-text">
+            <h1>Ashok</h1>
+            <span>Web Developer &amp; Technical Consultant</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="blog-content.html">Hire a Blog Writer</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+      <div class="services-hero-content">
+        <h1>Our Services</h1>
+        <p>
+          Complete end-to-end development services designed to bring your digital vision to life. 
+          From concept to deployment, we handle every aspect of your project.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+      <div class="services-grid">
+        <!-- Service 1: eCommerce -->
+        <div class="service-card">
+          <div class="service-icon">
+            🛒
+          </div>
+          <div class="service-content">
+            <div class="service-name">eCommerce Development</div>
+            <p class="service-description">
+              Full‑fledged eCommerce websites built on platforms such as Wix, Shopify, and WordPress, 
+              tailored to each client's business needs. Complete with product management, payment 
+              integration, and order processing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 2: Web Applications -->
+        <div class="service-card">
+          <div class="service-icon">
+            ⚡
+          </div>
+          <div class="service-content">
+            <div class="service-name">Web Applications & Custom Tools</div>
+            <p class="service-description">
+              End‑to‑end web applications and custom tools developed using React, Vite, CSS, HTML, 
+              TypeScript, and Tailwind, ensuring high performance, scalability, and modern UI/UX.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 3: Deployment -->
+        <div class="service-card">
+          <div class="service-icon">
+            🚀
+          </div>
+          <div class="service-content">
+            <div class="service-name">Complete Deployment Support</div>
+            <p class="service-description">
+              Full deployment support, including domain purchase, hosting setup, code deployment, 
+              configuration, and making the website live in production with ongoing maintenance as needed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 4: Integration -->
+        <div class="service-card">
+          <div class="service-icon">
+            🔗
+          </div>
+          <div class="service-content">
+            <div class="service-name">Integration & Automation</div>
+            <p class="service-description">
+              Front‑end and back‑end integration, API development, and automation where required. 
+              Seamless connections between systems to streamline your workflows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 5: SEO & Optimization -->
+        <div class="service-card">
+          <div class="service-icon">
+            📈
+          </div>
+          <div class="service-content">
+            <div class="service-name">SEO & Performance Optimization</div>
+            <p class="service-description">
+              SEO setup, analytics integration, and performance optimization to help clients grow 
+              after launch. Data-driven strategies to improve visibility and conversions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Service 6: Turnkey Solutions -->
+        <div class="service-card">
+          <div class="service-icon">
+            🎯
+          </div>
+          <div class="service-content">
+            <div class="service-name">Complete Turnkey Solutions</div>
+            <p class="service-description">
+              Whether it's a simple business website or a complex multi‑category eCommerce platform, 
+              we provide complete, turnkey solutions from start to finish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+      <div class="services-cta-content">
+        <h2>Ready to Get Started?</h2>
+        <p>
+          Let's discuss how our services can help bring your project to life. 
+          We handle everything from planning to deployment and beyond.
+        </p>
+        <a href="contact.html" class="btn-primary">Get in Touch</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
+      <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
+    </footer>
+  </div>
+</body>
+</html>
+
