@@ -131,16 +131,67 @@
     }
     
     .header-nav a {
-      color: var(--text-muted);
+      color: #ffffff;
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 1px 2px rgba(0, 0, 0, 0.2),
+        0 0 8px rgba(56, 189, 248, 0.2);
+      transform: translateY(0) perspective(1000px) rotateX(0deg);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.2),
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    
+    .header-nav a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.3) 0%, rgba(139, 92, 246, 0.2) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
     }
     
     .header-nav a:hover {
-      background: rgba(var(--accent-rgb), 0.1);
-      color: var(--accent);
+      color: #ffffff;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(139, 92, 246, 0.15) 100%);
+      transform: translateY(-2px) perspective(1000px) rotateX(5deg) scale(1.05);
+      text-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.3),
+        0 0 16px rgba(56, 189, 248, 0.5),
+        0 0 24px rgba(56, 189, 248, 0.3);
+      box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.3),
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(56, 189, 248, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    
+    .header-nav a:hover::before {
+      opacity: 1;
+    }
+    
+    .header-nav a:active {
+      transform: translateY(0) perspective(1000px) rotateX(0deg) scale(0.98);
+      box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
     }
     
     .header-links {
