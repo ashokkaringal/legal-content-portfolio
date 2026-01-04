@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Ashok – Web Developer & Technical Consultant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="View live examples of websites and projects by Ashok, including real estate, eCommerce, and training institute sites."
+  />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: #020617;
+      --border-subtle: #1f2937;
+      --danger: #f97373;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      --body-bg-start: #1e293b;
+      --body-bg-mid: #020617;
+      --body-bg-end: #000;
+      --section-bg-start: #1e293b;
+      --section-bg-mid: #020617;
+      --section-bg-end: #000;
+      --brand-badge-start: #38bdf8;
+      --brand-badge-mid: #0f172a;
+      --brand-badge-end: #020617;
+      --accent-rgb: 56, 189, 248;
+      --card-bg-rgba: rgba(15, 23, 42, 0.9);
+      --card-bg-alt-rgba: rgba(2, 6, 23, 0.9);
+      --border-color-rgba: rgba(30, 64, 175, 0.6);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, var(--body-bg-start) 0, var(--body-bg-mid) 45%, var(--body-bg-end) 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s ease;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    header {
+      padding: 16px 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, var(--brand-badge-start) 0, var(--brand-badge-mid) 55%, var(--brand-badge-end) 100%);
+      color: #e5e7eb;
+      font-weight: 600;
+      font-size: 18px;
+      box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text span {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+    }
+    
+    .header-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 12px;
+      border-radius: 999px;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    
+    .header-nav a:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+      color: var(--accent);
+    }
+
+    @media (max-width: 880px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .header-nav {
+        order: 2;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-top: 12px;
+        gap: 6px;
+      }
+    }
+
+    .section {
+      margin-top: 18px;
+      padding: 20px 20px 24px;
+      border-radius: 16px;
+      background: radial-gradient(circle at 0 -40%, var(--section-bg-start) 0, var(--section-bg-mid) 42%, var(--section-bg-end) 110%);
+      border: 1px solid var(--border-color-rgba);
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .portfolio-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .portfolio-item {
+      background: var(--card-bg-rgba);
+      border-radius: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color-rgba);
+      font-size: 14px;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .portfolio-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 2px;
+    }
+
+    .portfolio-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .portfolio-type {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .portfolio-link {
+      font-size: 13px;
+      color: var(--accent);
+      word-break: break-all;
+    }
+
+    .portfolio-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .portfolio-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .portfolio-btn-row span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .portfolio-btn-row a {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: var(--card-bg-rgba);
+      text-decoration: none;
+      color: #e5e7eb;
+      transition: background 0.3s ease;
+    }
+
+    .portfolio-btn-row a:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+    }
+
+    footer {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-color-rgba);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      transition: border-color 0.3s ease;
+    }
+
+    footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+          <div class="brand-badge">A</div>
+          <div class="brand-text">
+            <h1>Ashok</h1>
+            <span>Web Developer &amp; Technical Consultant</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog-content.html">Blog content</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section" id="portfolio">
+        <div class="section-header">
+          <div class="section-title">Portfolio</div>
+          <div class="section-sub">Live examples &amp; ongoing work</div>
+        </div>
+
+        <div class="portfolio-list">
+          <div class="portfolio-item">
+            <div class="portfolio-top">
+              <div class="portfolio-name">MyBigNest.com</div>
+              <div class="portfolio-type">Real estate · Property management</div>
+            </div>
+            <div class="portfolio-link">
+              <a href="https://mybignest.com" target="_blank" rel="noopener">https://mybignest.com</a>
+            </div>
+            <p class="portfolio-note">
+              Responsive site for a property management and real estate solutions business, focused on clarity and lead capture.
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-top">
+              <div class="portfolio-name">VTUIT.com</div>
+              <div class="portfolio-type">Software training institute</div>
+            </div>
+            <div class="portfolio-link">
+              <a href="https://vtuit.com" target="_blank" rel="noopener">https://vtuit.com</a>
+            </div>
+            <p class="portfolio-note">
+              Clean layout to present courses, highlight key programs, and make enrollment inquiries straightforward.
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-top">
+              <div class="portfolio-name">NoLandsCakes.com</div>
+              <div class="portfolio-type">eCommerce · Bakery</div>
+            </div>
+            <div class="portfolio-link">
+              <a href="https://nolandscakes.com" target="_blank" rel="noopener">https://nolandscakes.com</a>
+            </div>
+            <p class="portfolio-note">
+              Migration from WordPress to Wix with product integration and a simplified order experience for customers.
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-top">
+              <div class="portfolio-name">Legal Content Portfolio</div>
+              <div class="portfolio-type">Content Writing · Digital Marketing</div>
+            </div>
+            <div class="portfolio-link">
+              <a href="https://ashokkaringal.github.io/legal-content-portfolio/blog-content.html" target="_blank" rel="noopener">https://ashokkaringal.github.io/legal-content-portfolio/blog-content.html</a>
+            </div>
+            <p class="portfolio-note">
+              SEO-optimized legal blog content writing portfolio showcasing AI-resistant content, blog samples, and digital marketing services for law firms.
+            </p>
+          </div>
+
+          <div class="portfolio-item">
+            <div class="portfolio-top">
+              <div class="portfolio-name">Real estate project (in progress)</div>
+              <div class="portfolio-type">Property listings · Oracle Cloud</div>
+            </div>
+            <p class="portfolio-note">
+              Ongoing development hosted on Oracle Cloud, focused on showcasing properties with a fast, search‑friendly frontend.
+            </p>
+          </div>
+        </div>
+
+        <div class="portfolio-btn-row">
+          <span>Want a similar site or store?</span>
+          <a href="contact.html">Request a quick call</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
+      <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
+    </footer>
+  </div>
+</body>
+</html>
