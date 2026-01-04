@@ -23,8 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const metricCards = document.querySelectorAll('.metric-card');
     metricCards.forEach(card => {
         card.classList.add('tilt-3d');
+        let isHovering = false;
+        
+        card.addEventListener('mouseenter', () => {
+            isHovering = true;
+            card.style.animation = 'none';
+        });
         
         card.addEventListener('mousemove', (e) => {
+            if (!isHovering) return;
+            
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -32,14 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
             
-            const rotateX = (y - centerY) / 10;
-            const rotateY = (centerX - x) / 10;
+            const rotateX = (y - centerY) / 15;
+            const rotateY = (centerX - x) / 15;
             
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(15px) translateY(-8px)`;
         });
         
         card.addEventListener('mouseleave', () => {
+            isHovering = false;
             card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+            // Restore floating animation after a brief delay
+            setTimeout(() => {
+                if (!isHovering) {
+                    card.style.animation = '';
+                }
+            }, 100);
         });
     });
     

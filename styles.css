@@ -304,14 +304,26 @@
 
 .metric-card.card-1 {
     animation-delay: 1.2s;
+    animation: fade-in-up 0.8s ease 1.2s forwards, float-3d 6s ease-in-out 2s infinite;
 }
 
 .metric-card.card-2 {
     animation-delay: 1.4s;
+    animation: fade-in-up 0.8s ease 1.4s forwards, float-3d 7s ease-in-out 2.2s infinite;
 }
 
 .metric-card.card-3 {
     animation-delay: 1.6s;
+    animation: fade-in-up 0.8s ease 1.6s forwards, float-3d 8s ease-in-out 2.4s infinite;
+}
+
+@keyframes float-3d {
+    0%, 100% {
+        transform: translateY(0) rotateX(0) rotateY(0) translateZ(0);
+    }
+    50% {
+        transform: translateY(-10px) rotateX(2deg) rotateY(-1deg) translateZ(5px);
+    }
 }
 
 .metric-icon {
