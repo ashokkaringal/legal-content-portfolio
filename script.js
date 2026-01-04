@@ -21,9 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 3D Tilt Effect for Metric Cards
     const metricCards = document.querySelectorAll('.metric-card');
-    metricCards.forEach(card => {
+    metricCards.forEach((card, index) => {
         card.classList.add('tilt-3d');
         let isHovering = false;
+        
+        // Add animated class after fade-in completes
+        setTimeout(() => {
+            card.classList.add('animated');
+        }, 2000 + (index * 200));
         
         card.addEventListener('mouseenter', () => {
             isHovering = true;

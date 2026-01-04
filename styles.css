@@ -303,17 +303,26 @@
 }
 
 .metric-card.card-1 {
-    animation-delay: 1.2s;
+    animation: fade-in-up 0.8s ease 1.2s forwards;
+}
+
+.metric-card.card-1.animated {
     animation: fade-in-up 0.8s ease 1.2s forwards, float-3d 6s ease-in-out 2s infinite;
 }
 
 .metric-card.card-2 {
-    animation-delay: 1.4s;
+    animation: fade-in-up 0.8s ease 1.4s forwards;
+}
+
+.metric-card.card-2.animated {
     animation: fade-in-up 0.8s ease 1.4s forwards, float-3d 7s ease-in-out 2.2s infinite;
 }
 
 .metric-card.card-3 {
-    animation-delay: 1.6s;
+    animation: fade-in-up 0.8s ease 1.6s forwards;
+}
+
+.metric-card.card-3.animated {
     animation: fade-in-up 0.8s ease 1.6s forwards, float-3d 8s ease-in-out 2.4s infinite;
 }
 
