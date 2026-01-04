@@ -14,26 +14,23 @@
       --bg-alt: #020617;
       --accent: #38bdf8;
       --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-secondary: #8b5cf6;
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --card-bg: #020617;
       --border-subtle: #1f2937;
-      --danger: #f97373;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --body-bg-start: #1e293b;
       --body-bg-mid: #020617;
       --body-bg-end: #000;
-      --section-bg-start: #1e293b;
-      --section-bg-mid: #020617;
-      --section-bg-end: #000;
       --brand-badge-start: #38bdf8;
       --brand-badge-mid: #0f172a;
       --brand-badge-end: #020617;
       --accent-rgb: 56, 189, 248;
       --card-bg-rgba: rgba(15, 23, 42, 0.9);
-      --card-bg-alt-rgba: rgba(2, 6, 23, 0.9);
       --border-color-rgba: rgba(30, 64, 175, 0.6);
+      --btn-primary-start: #22d3ee;
+      --btn-primary-end: #0ea5e9;
     }
 
     * {
@@ -44,11 +41,10 @@
 
     body {
       font-family: var(--font-main);
-      background: radial-gradient(circle at top, var(--body-bg-start) 0, var(--body-bg-mid) 45%, var(--body-bg-end) 100%);
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 20%, #020617 60%, #000 100%);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      transition: background 0.3s ease;
     }
 
     a {
@@ -61,28 +57,34 @@
     }
 
     .page {
-      max-width: 800px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 32px 24px 64px;
+      padding: 0;
     }
 
     header {
-      padding: 16px 0 20px;
+      padding: 24px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand-badge {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       border: 1px solid var(--accent-soft);
       display: inline-flex;
@@ -91,9 +93,8 @@
       background: radial-gradient(circle at 30% 0, var(--brand-badge-start) 0, var(--brand-badge-mid) 55%, var(--brand-badge-end) 100%);
       color: #e5e7eb;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 20px;
       box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .brand-text {
@@ -109,7 +110,7 @@
     }
 
     .brand-text span {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
@@ -117,15 +118,15 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 13px;
+      font-size: 14px;
     }
     
     .header-nav a {
       color: var(--text-muted);
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: all 0.2s ease;
     }
     
     .header-nav a:hover {
@@ -137,10 +138,10 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px 24px;
       }
       
       .header-nav {
-        order: 2;
         width: 100%;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -149,128 +150,299 @@
       }
     }
 
-    .section {
-      margin-top: 18px;
-      padding: 20px 20px 24px;
-      border-radius: 16px;
-      background: radial-gradient(circle at 0 -40%, var(--section-bg-start) 0, var(--section-bg-mid) 42%, var(--section-bg-end) 110%);
-      border: 1px solid var(--border-color-rgba);
-      transition: background 0.3s ease, border-color 0.3s ease;
+    .portfolio-hero {
+      padding: 100px 32px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 10px;
+    .portfolio-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .section-title {
-      font-size: 18px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #e5e7eb;
+    .portfolio-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    .section-sub {
-      font-size: 14px;
+    .portfolio-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #8b5cf6 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .portfolio-hero p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
       color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    .portfolio-list {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr);
-      gap: 8px;
-      margin-top: 6px;
+    .filter-section {
+      padding: 40px 32px;
+      background: rgba(15, 23, 42, 0.4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .portfolio-item {
-      background: var(--card-bg-rgba);
-      border-radius: 10px;
-      padding: 12px 14px;
-      border: 1px solid var(--border-color-rgba);
-      font-size: 14px;
-      transition: background 0.3s ease, border-color 0.3s ease;
-    }
-
-    .portfolio-top {
+    .filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
-      align-items: baseline;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn:hover {
+      background: rgba(var(--accent-rgb), 0.1);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .filter-btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      border-color: transparent;
+      color: white;
+    }
+
+    .portfolio-section {
+      padding: 80px 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .portfolio-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 60px rgba(56, 189, 248, 0.3);
+    }
+
+    .portfolio-image {
+      width: 100%;
+      height: 220px;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(139, 92, 246, 0.2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .portfolio-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%),
+        radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.3), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .portfolio-card:hover .portfolio-image::before {
+      opacity: 1;
+    }
+
+    .portfolio-image-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    .portfolio-content {
+      padding: 28px;
+    }
+
+    .portfolio-header {
+      display: flex;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 6px;
-      margin-bottom: 2px;
+      gap: 16px;
+      margin-bottom: 12px;
     }
 
     .portfolio-name {
-      font-weight: 600;
-      font-size: 15px;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1.2;
     }
 
     .portfolio-type {
-      font-size: 13px;
-      color: var(--text-muted);
+      font-size: 0.85rem;
+      color: var(--accent);
+      background: rgba(var(--accent-rgb), 0.1);
+      padding: 4px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
     }
 
     .portfolio-link {
-      font-size: 13px;
+      font-size: 0.9rem;
       color: var(--accent);
       word-break: break-all;
+      margin: 12px 0;
+      display: block;
+      transition: color 0.3s ease;
     }
 
-    .portfolio-note {
-      font-size: 13px;
+    .portfolio-link:hover {
+      color: var(--accent-secondary);
+    }
+
+    .portfolio-description {
       color: var(--text-muted);
-      margin-top: 2px;
+      line-height: 1.7;
+      margin-top: 16px;
+      font-size: 0.95rem;
     }
 
-    .portfolio-btn-row {
+    .portfolio-features {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 6px;
-      margin-top: 8px;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .portfolio-btn-row span {
-      font-size: 13px;
+    .feature-tag {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
       color: var(--text-muted);
     }
 
-    .portfolio-btn-row a {
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.7);
-      background: var(--card-bg-rgba);
-      text-decoration: none;
-      color: #e5e7eb;
-      transition: background 0.3s ease;
+    .portfolio-cta {
+      padding: 80px 32px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .portfolio-btn-row a:hover {
-      background: rgba(var(--accent-rgb), 0.1);
+    .portfolio-cta-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .portfolio-cta h2 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .portfolio-cta p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .btn-primary {
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
+      color: #0f172a;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.4);
+      text-decoration: none;
     }
 
     footer {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-color-rgba);
-      font-size: 13px;
+      margin-top: 0;
+      padding: 40px 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 14px;
       color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 6px;
-      transition: border-color 0.3s ease;
     }
 
     footer span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-hero {
+        padding: 80px 24px 60px;
+      }
+
+      .portfolio-section {
+        padding: 60px 24px;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .filter-section {
+        padding: 32px 24px;
+      }
     }
   </style>
 </head>
@@ -295,88 +467,201 @@
       </nav>
     </header>
 
-    <main>
-      <section class="section" id="portfolio">
-        <div class="section-header">
-          <div class="section-title">Portfolio</div>
-          <div class="section-sub">Live examples &amp; ongoing work</div>
-        </div>
+    <section class="portfolio-hero">
+      <div class="portfolio-hero-content">
+        <h1>Portfolio</h1>
+        <p>
+          Real projects, real results. Explore the websites and digital solutions I've built 
+          for businesses across different industries.
+        </p>
+      </div>
+    </section>
 
-        <div class="portfolio-list">
-          <div class="portfolio-item">
-            <div class="portfolio-top">
+    <section class="filter-section">
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+        <button class="filter-btn" data-filter="ecommerce">eCommerce</button>
+        <button class="filter-btn" data-filter="training">Training</button>
+        <button class="filter-btn" data-filter="content">Content Writing</button>
+      </div>
+    </section>
+
+    <section class="portfolio-section">
+      <div class="portfolio-grid">
+        <div class="portfolio-card" data-category="real-estate">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🏠</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
               <div class="portfolio-name">MyBigNest.com</div>
-              <div class="portfolio-type">Real estate · Property management</div>
+              <div class="portfolio-type">Real Estate</div>
             </div>
-            <div class="portfolio-link">
-              <a href="https://mybignest.com" target="_blank" rel="noopener">https://mybignest.com</a>
-            </div>
-            <p class="portfolio-note">
-              Responsive site for a property management and real estate solutions business, focused on clarity and lead capture.
+            <a href="https://mybignest.com" target="_blank" rel="noopener" class="portfolio-link">
+              https://mybignest.com →
+            </a>
+            <p class="portfolio-description">
+              A responsive website for a property management and real estate solutions business. 
+              Designed with clarity and lead capture in mind, featuring intuitive navigation and 
+              mobile-optimized layouts.
             </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">Responsive Design</span>
+              <span class="feature-tag">Lead Capture</span>
+              <span class="feature-tag">Property Listings</span>
+            </div>
           </div>
+        </div>
 
-          <div class="portfolio-item">
-            <div class="portfolio-top">
+        <div class="portfolio-card" data-category="training">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🎓</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
               <div class="portfolio-name">VTUIT.com</div>
-              <div class="portfolio-type">Software training institute</div>
+              <div class="portfolio-type">Training</div>
             </div>
-            <div class="portfolio-link">
-              <a href="https://vtuit.com" target="_blank" rel="noopener">https://vtuit.com</a>
-            </div>
-            <p class="portfolio-note">
-              Clean layout to present courses, highlight key programs, and make enrollment inquiries straightforward.
+            <a href="https://vtuit.com" target="_blank" rel="noopener" class="portfolio-link">
+              https://vtuit.com →
+            </a>
+            <p class="portfolio-description">
+              Clean, professional layout for a software training institute. The site effectively 
+              presents courses, highlights key programs, and makes enrollment inquiries 
+              straightforward for prospective students.
             </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">Course Catalog</span>
+              <span class="feature-tag">Enrollment Forms</span>
+              <span class="feature-tag">SEO Optimized</span>
+            </div>
           </div>
+        </div>
 
-          <div class="portfolio-item">
-            <div class="portfolio-top">
+        <div class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🍰</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
               <div class="portfolio-name">NoLandsCakes.com</div>
-              <div class="portfolio-type">eCommerce · Bakery</div>
+              <div class="portfolio-type">eCommerce</div>
             </div>
-            <div class="portfolio-link">
-              <a href="https://nolandscakes.com" target="_blank" rel="noopener">https://nolandscakes.com</a>
-            </div>
-            <p class="portfolio-note">
-              Migration from WordPress to Wix with product integration and a simplified order experience for customers.
+            <a href="https://nolandscakes.com" target="_blank" rel="noopener" class="portfolio-link">
+              https://nolandscakes.com →
+            </a>
+            <p class="portfolio-description">
+              Complete migration from WordPress to Wix with seamless product integration. 
+              The new platform offers a simplified order experience for customers while 
+              maintaining all product data and improving site performance.
             </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">Platform Migration</span>
+              <span class="feature-tag">Product Integration</span>
+              <span class="feature-tag">Payment Gateway</span>
+            </div>
           </div>
+        </div>
 
-          <div class="portfolio-item">
-            <div class="portfolio-top">
+        <div class="portfolio-card" data-category="content">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">📝</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
               <div class="portfolio-name">Legal Content Portfolio</div>
-              <div class="portfolio-type">Content Writing · Digital Marketing</div>
+              <div class="portfolio-type">Content Writing</div>
             </div>
-            <div class="portfolio-link">
-              <a href="https://ashokkaringal.github.io/legal-content-portfolio/blog-content.html" target="_blank" rel="noopener">https://ashokkaringal.github.io/legal-content-portfolio/blog-content.html</a>
-            </div>
-            <p class="portfolio-note">
-              SEO-optimized legal blog content writing portfolio showcasing AI-resistant content, blog samples, and digital marketing services for law firms.
+            <a href="https://ashokkaringal.github.io/legal-content-portfolio/blog-content.html" target="_blank" rel="noopener" class="portfolio-link">
+              View Portfolio →
+            </a>
+            <p class="portfolio-description">
+              SEO-optimized legal blog content writing portfolio showcasing AI-resistant content, 
+              blog samples, and digital marketing services for law firms. Features interactive 
+              metrics and case studies.
             </p>
-          </div>
-
-          <div class="portfolio-item">
-            <div class="portfolio-top">
-              <div class="portfolio-name">Real estate project (in progress)</div>
-              <div class="portfolio-type">Property listings · Oracle Cloud</div>
+            <div class="portfolio-features">
+              <span class="feature-tag">SEO Content</span>
+              <span class="feature-tag">AI-Resistant</span>
+              <span class="feature-tag">Digital Marketing</span>
             </div>
-            <p class="portfolio-note">
-              Ongoing development hosted on Oracle Cloud, focused on showcasing properties with a fast, search‑friendly frontend.
-            </p>
           </div>
         </div>
 
-        <div class="portfolio-btn-row">
-          <span>Want a similar site or store?</span>
-          <a href="contact.html">Request a quick call</a>
+        <div class="portfolio-card" data-category="real-estate">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🏗️</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
+              <div class="portfolio-name">Real Estate Platform</div>
+              <div class="portfolio-type">In Progress</div>
+            </div>
+            <p class="portfolio-description">
+              Ongoing development of a property listings platform hosted on Oracle Cloud. 
+              Focused on creating a fast, search-friendly frontend that makes property discovery 
+              intuitive and efficient.
+            </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">Oracle Cloud</span>
+              <span class="feature-tag">Property Search</span>
+              <span class="feature-tag">Fast Performance</span>
+            </div>
+          </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
+
+    <section class="portfolio-cta">
+      <div class="portfolio-cta-content">
+        <h2>Want a Similar Site or Store?</h2>
+        <p>
+          Each project is unique, but the principles remain the same: clear design, 
+          reliable functionality, and results that matter. Let's discuss your project.
+        </p>
+        <a href="contact.html" class="btn-primary">Request a Quick Call</a>
+      </div>
+    </section>
 
     <footer>
       <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
       <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          const filterValue = this.getAttribute('data-filter');
+
+          portfolioCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || cardCategory === filterValue) {
+              card.style.display = 'block';
+              setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              }, 10);
+            } else {
+              card.style.opacity = '0';
+              card.style.transform = 'scale(0.9)';
+              setTimeout(() => {
+                card.style.display = 'none';
+              }, 300);
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>
