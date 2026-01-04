@@ -287,13 +287,54 @@
       margin-bottom: 32px;
     }
 
+    .section-content p {
+      color: #f1f5f9;
+    }
+
     /* Brand Story */
     .brand-story {
-      background: rgba(15, 23, 42, 0.5);
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.9) 50%, rgba(139, 92, 246, 0.1) 100%);
       border-radius: 24px;
-      padding: 48px;
+      padding: 56px;
       margin-bottom: 48px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 2px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 
+        0 20px 60px rgba(56, 189, 248, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-story::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+      opacity: 0.8;
+    }
+
+    .brand-story h2 {
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-story .section-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-story .section-content p {
+      color: #f1f5f9;
+      font-size: 1.15rem;
+      line-height: 1.9;
+      font-weight: 400;
     }
 
     /* Mission Vision Values */
