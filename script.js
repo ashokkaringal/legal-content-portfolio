@@ -19,26 +19,43 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Animate progress ring
+    // Animate progress ring for AI Detection Score (12%)
     const progressRing = document.querySelector('.progress-ring-circle');
     if (progressRing) {
+        // Calculate: circumference = 2 * π * r = 2 * π * 36 ≈ 226.2
+        // For 12%: stroke-dashoffset = 226.2 - (226.2 * 0.12) = 226.2 - 27.14 = 199
         setTimeout(() => {
-            progressRing.style.strokeDashoffset = '27'; // 12% of 226
+            progressRing.classList.add('animated');
         }, 2000);
     }
     
-    // Animate word count
+    // Animate progress bar for Grammar Score (98%)
+    const progressBarFill = document.getElementById('grammar-progress');
+    if (progressBarFill) {
+        setTimeout(() => {
+            progressBarFill.classList.add('animated');
+        }, 2200);
+    }
+    
+    // Animate word count from 0 to 525
     const wordCountElement = document.getElementById('word-count');
     if (wordCountElement) {
         let count = 0;
         const target = 525;
         const duration = 2000;
-        const increment = target / (duration / 16);
+        const startTime = Date.now();
         
         const animateCount = () => {
-            count += increment;
-            if (count < target) {
-                wordCountElement.textContent = Math.floor(count);
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+            count = Math.floor(easeOutCubic * target);
+            
+            wordCountElement.textContent = count;
+            
+            if (progress < 1) {
                 requestAnimationFrame(animateCount);
             } else {
                 wordCountElement.textContent = target;
@@ -47,7 +64,44 @@ document.addEventListener('DOMContentLoaded', function() {
         
         setTimeout(() => {
             animateCount();
-        }, 2500);
+        }, 2400);
+    }
+    
+    // Animate metric values with counter effect
+    const aiScoreElement = document.getElementById('ai-score');
+    const grammarScoreElement = document.getElementById('grammar-score');
+    
+    const animateValue = (element, target, suffix = '') => {
+        if (!element) return;
+        let current = 0;
+        const duration = 1500;
+        const startTime = Date.now();
+        
+        const animate = () => {
+            const elapsed = Date.now() - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+            current = Math.floor(easeOutCubic * target);
+            element.textContent = current + suffix;
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = target + suffix;
+            }
+        };
+        
+        setTimeout(() => {
+            animate();
+        }, 2000);
+    };
+    
+    if (aiScoreElement) {
+        animateValue(aiScoreElement, 12, '%');
+    }
+    
+    if (grammarScoreElement) {
+        animateValue(grammarScoreElement, 98, '%');
     }
     
     // Mobile Menu Toggle
