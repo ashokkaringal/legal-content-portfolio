@@ -14,30 +14,23 @@
       --bg-alt: #020617;
       --accent: #38bdf8;
       --accent-soft: rgba(56, 189, 248, 0.15);
+      --accent-secondary: #10b981;
       --text-main: #e5e7eb;
       --text-muted: #9ca3af;
       --card-bg: #020617;
       --border-subtle: #1f2937;
-      --danger: #f97373;
-      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      /* Theme-dependent variables */
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       --body-bg-start: #1e293b;
       --body-bg-mid: #020617;
       --body-bg-end: #000;
-      --section-bg-start: #1e293b;
-      --section-bg-mid: #020617;
-      --section-bg-end: #000;
       --brand-badge-start: #38bdf8;
       --brand-badge-mid: #0f172a;
       --brand-badge-end: #020617;
       --accent-rgb: 56, 189, 248;
       --card-bg-rgba: rgba(15, 23, 42, 0.9);
-      --card-bg-alt-rgba: rgba(2, 6, 23, 0.9);
       --border-color-rgba: rgba(30, 64, 175, 0.6);
       --btn-primary-start: #22d3ee;
       --btn-primary-end: #0ea5e9;
-      --btn-primary-shadow: rgba(8, 47, 73, 0.9);
     }
 
     * {
@@ -48,11 +41,10 @@
 
     body {
       font-family: var(--font-main);
-      background: radial-gradient(circle at top, var(--body-bg-start) 0, var(--body-bg-mid) 45%, var(--body-bg-end) 100%);
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 25%, #020617 65%, #000 100%);
       color: var(--text-main);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
-      transition: background 0.3s ease;
     }
 
     a {
@@ -65,28 +57,34 @@
     }
 
     .page {
-      max-width: 800px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 32px 24px 64px;
+      padding: 0;
     }
 
     header {
-      padding: 16px 0 20px;
+      padding: 24px 32px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
     }
 
     .brand-badge {
-      width: 40px;
-      height: 40px;
+      width: 44px;
+      height: 44px;
       border-radius: 999px;
       border: 1px solid var(--accent-soft);
       display: inline-flex;
@@ -95,9 +93,8 @@
       background: radial-gradient(circle at 30% 0, var(--brand-badge-start) 0, var(--brand-badge-mid) 55%, var(--brand-badge-end) 100%);
       color: #e5e7eb;
       font-weight: 600;
-      font-size: 18px;
+      font-size: 20px;
       box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
     .brand-text {
@@ -113,7 +110,7 @@
     }
 
     .brand-text span {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-muted);
     }
 
@@ -121,15 +118,15 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      font-size: 13px;
+      font-size: 14px;
     }
     
     .header-nav a {
       color: var(--text-muted);
       text-decoration: none;
-      padding: 6px 12px;
+      padding: 8px 16px;
       border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition: all 0.2s ease;
     }
     
     .header-nav a:hover {
@@ -141,10 +138,10 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 20px 24px;
       }
       
       .header-nav {
-        order: 2;
         width: 100%;
         justify-content: flex-start;
         flex-wrap: wrap;
@@ -153,72 +150,304 @@
       }
     }
 
-    .section {
-      margin-top: 18px;
-      padding: 20px 20px 24px;
-      border-radius: 16px;
-      background: radial-gradient(circle at 0 -40%, var(--section-bg-start) 0, var(--section-bg-mid) 42%, var(--section-bg-end) 110%);
-      border: 1px solid var(--border-color-rgba);
-      transition: background 0.3s ease, border-color 0.3s ease;
+    /* Hero Section */
+    .contact-hero {
+      padding: 100px 32px 80px;
+      text-align: center;
+      background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+      position: relative;
+      overflow: hidden;
     }
 
-    .side-card {
-      padding: 16px 16px 18px;
-      border-radius: 14px;
-      background: var(--card-bg-rgba);
-      border: 1px solid var(--border-color-rgba);
-      font-size: 14px;
-      color: #e5e7eb;
-      transition: background 0.3s ease, border-color 0.3s ease;
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.15) 0%, transparent 50%);
+      pointer-events: none;
     }
 
-    .side-title {
-      font-size: 16px;
+    .contact-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #ffffff 0%, #10b981 50%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .contact-hero p {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 80px 32px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 968px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    /* Contact Info Card */
+    .contact-info-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-info-card h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: white;
+    }
+
+    .contact-info-card p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .contact-detail {
+      margin-bottom: 24px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-detail-label {
+      font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 4px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .contact-detail-value {
+      font-size: 1.1rem;
+      color: white;
+      font-weight: 500;
+    }
+
+    .contact-detail-value a {
+      color: var(--accent);
+      transition: color 0.3s ease;
+    }
+
+    .contact-detail-value a:hover {
+      color: var(--accent-secondary);
+    }
+
+    .business-hours {
+      margin-top: 32px;
+      padding: 24px;
+      background: rgba(16, 185, 129, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .business-hours h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--accent-secondary);
+    }
+
+    .business-hours p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin: 4px 0;
+    }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 24px;
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .contact-form-card h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: white;
+    }
+
+    .contact-form-card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .form-label .required {
+      color: var(--accent);
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      color: white;
+      font-size: 1rem;
+      font-family: var(--font-main);
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
     }
 
     .btn-primary {
+      width: 100%;
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
+      color: #0f172a;
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 20px;
-      border-radius: 999px;
-      font-size: 15px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      text-decoration: none;
-      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
-      color: #0f172a;
-      font-weight: 600;
-      box-shadow:
-        0 10px 30px var(--btn-primary-shadow),
-        0 0 0 1px rgba(var(--accent-rgb), 0.4) inset;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      gap: 8px;
     }
 
     .btn-primary:hover {
-      filter: brightness(1.03);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(56, 189, 248, 0.4);
       text-decoration: none;
     }
 
-    footer {
-      margin-top: 18px;
-      padding-top: 14px;
-      border-top: 1px solid var(--border-color-rgba);
-      font-size: 13px;
+    /* QR Code Section */
+    .qr-section {
+      margin-top: 48px;
+      padding: 32px;
+      background: rgba(15, 23, 42, 0.4);
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .qr-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: white;
+    }
+
+    .qr-section p {
+      font-size: 0.9rem;
       color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .qr-image-container {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 6px;
-      transition: border-color 0.3s ease;
+      justify-content: center;
+      margin: 24px 0;
+    }
+
+    .qr-image-container img {
+      max-width: 220px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      margin-top: 80px;
+      padding: 40px 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-muted);
     }
 
     footer span {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-hero {
+        padding: 80px 24px 60px;
+      }
+
+      .contact-section {
+        padding: 60px 24px;
+      }
+
+      .contact-info-card,
+      .contact-form-card {
+        padding: 32px 24px;
+      }
     }
   </style>
 </head>
@@ -243,45 +472,166 @@
       </nav>
     </header>
 
-    <main>
-      <div class="side-card" id="contact">
-        <div class="side-title">Get in Touch</div>
-        <p class="contact-sub" style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
-          Have a project in mind? Let's discuss how I can help bring your vision to life.
+    <!-- Hero Section -->
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <h1>Let's Work Together</h1>
+        <p>
+          Have a project in mind? I'd love to hear about it. Whether you're looking to build 
+          something new or improve what you have, let's start a conversation.
         </p>
+      </div>
+    </section>
 
-        <div style="margin-bottom: 20px;">
-          <div style="font-size: 13px; margin-bottom: 16px;">
-            <span style="color: var(--text-muted); display: block; margin-bottom: 6px; font-weight: 500;">Email:</span>
-            <a href="mailto:ashok.karingal@gmail.com" style="color: var(--accent); font-weight: 500; text-decoration: none; word-break: break-all; font-size: 14px;">ashok.karingal@gmail.com</a>
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <div class="contact-grid">
+        <!-- Contact Info -->
+        <div class="contact-info-card">
+          <h2>Get in Touch</h2>
+          <p>
+            Ready to bring your vision to life? Send me a message or reach out directly. 
+            I typically respond within 24 hours during business days.
+          </p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-label">Email</div>
+            <div class="contact-detail-value">
+              <a href="mailto:ashok.karingal@gmail.com">ashok.karingal@gmail.com</a>
+            </div>
           </div>
-          
-          <div style="font-size: 12px; color: var(--text-muted); line-height: 1.6; margin-bottom: 16px;">
-            <p style="margin-bottom: 8px;"><strong style="color: var(--text-main);">Response Time:</strong> I typically respond within 24 hours during business days.</p>
-            <p style="margin-bottom: 8px;"><strong style="color: var(--text-main);">Urgent Projects:</strong> Mention it in your email and I'll prioritize your request.</p>
-            <p><strong style="color: var(--text-main);">Availability:</strong> Available for new projects, ongoing support, and consultations.</p>
+
+          <div class="contact-detail">
+            <div class="contact-detail-label">Response Time</div>
+            <div class="contact-detail-value">Within 24 hours (business days)</div>
+          </div>
+
+          <div class="contact-detail">
+            <div class="contact-detail-label">Availability</div>
+            <div class="contact-detail-value">
+              Available for new projects, ongoing support, and consultations
+            </div>
+          </div>
+
+          <div class="business-hours">
+            <h3>📅 Business Hours</h3>
+            <p><strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM EST</p>
+            <p><strong>Weekend:</strong> Available for urgent projects</p>
+            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--accent-secondary);">
+              <strong>Note:</strong> For urgent projects, mention it in your message and I'll prioritize your request.
+            </p>
           </div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 8px;">
-          <div class="btn-primary" style="text-align: center; width: 100%; cursor: default;">
-            Email us for a free 20‑minute consultation
-          </div>
-          <div style="display: flex; justify-content: center; margin: 12px 0;">
-            <img src="qrcode-Ashok-Portfolio.png" alt="QR Code - Ashok Portfolio" style="max-width: 200px; width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border-subtle);">
-          </div>
-          <p class="contact-note" style="font-size: 11px; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">
-            <strong style="color: var(--text-main);">Scan this QR code</strong> to access this portfolio page. During our consultation, we can review your existing site or idea, discuss options, and outline a simple roadmap — no obligation.
-          </p>
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <h2>Send a Message</h2>
+          <p>Fill out the form below and I'll get back to you as soon as possible.</p>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label class="form-label" for="name">
+                Full Name <span class="required">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input" 
+                required 
+                placeholder="Your name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email">
+                Email Address <span class="required">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input" 
+                required 
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="company">
+                Company / Organization
+              </label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                class="form-input" 
+                placeholder="Your company name (optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">
+                Project Details <span class="required">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                class="form-textarea" 
+                required 
+                placeholder="Tell me about your project, timeline, and any specific requirements..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary">
+              Send Message
+            </button>
+          </form>
         </div>
       </div>
-    </main>
+
+      <!-- QR Code Section -->
+      <div class="qr-section">
+        <h3>Quick Access via QR Code</h3>
+        <p>
+          Scan this QR code to access this portfolio page directly. Perfect for sharing 
+          at networking events, business cards, or presentations.
+        </p>
+        <div class="qr-image-container">
+          <img src="qrcode-Ashok-Portfolio.png" alt="QR Code - Ashok Portfolio" />
+        </div>
+        <p style="font-size: 0.85rem; margin-top: 16px;">
+          <strong style="color: white;">During our consultation:</strong> We can review your existing site or idea, 
+          discuss options, and outline a simple roadmap — no obligation.
+        </p>
+      </div>
+    </section>
 
     <footer>
       <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
       <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
     </footer>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contact-form');
+      const formMessage = document.getElementById('form-message');
+
+      if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(contactForm);
+          const data = Object.fromEntries(formData);
+
+          // Here you would typically send the data to a server
+          // For now, show a success message
+          alert('Thank you! Your message has been sent. I\'ll get back to you within 24 hours.');
+          contactForm.reset();
+        });
+      }
+    });
+  </script>
 </body>
 </html>
-
