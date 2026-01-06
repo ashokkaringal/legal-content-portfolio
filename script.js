@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Blog Modal Functionality
-    const blogCards = document.querySelectorAll('.blog-card');
+    const blogReadButtons = document.querySelectorAll('.blog-read-btn');
     const blogModal = document.getElementById('blog-modal');
     const modalTitle = document.getElementById('modal-title');
     const modalContent = document.getElementById('modal-content');
@@ -213,10 +213,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (blogData && blogModal) {
         const blogs = JSON.parse(blogData.textContent);
         
-        blogCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const blogId = card.getAttribute('data-blog-id');
-                if (blogs[blogId]) {
+        blogReadButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event bubbling
+                const blogId = button.getAttribute('data-blog');
+                if (blogId && blogs[blogId]) {
                     modalTitle.textContent = blogs[blogId].title;
                     modalContent.innerHTML = blogs[blogId].content;
                     blogModal.classList.remove('hidden');

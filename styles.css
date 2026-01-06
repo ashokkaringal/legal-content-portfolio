@@ -489,6 +489,96 @@
     transform: translateY(0);
 }
 
+/* Blog Modal Content Styling */
+#modal-content {
+    line-height: 1.8;
+}
+
+#modal-content h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+}
+
+#modal-content h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+#modal-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+#modal-content h3 strong {
+    font-weight: 700;
+}
+
+#modal-content p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+#modal-content ul {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+#modal-content li {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.8;
+}
+
+#modal-content li p {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#modal-content a {
+    color: #3b82f6;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+#modal-content a:hover {
+    color: #2563eb;
+}
+
+#modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode styles for modal content */
+.dark #modal-content h1,
+.dark #modal-content h2,
+.dark #modal-content h3 {
+    color: #f3f4f6;
+}
+
+.dark #modal-content a {
+    color: #60a5fa;
+}
+
+.dark #modal-content a:hover {
+    color: #93c5fd;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero-headline {
@@ -502,5 +592,17 @@
     .orb-1, .orb-2, .orb-3 {
         width: 200px;
         height: 200px;
+    }
+    
+    #modal-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    #modal-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    #modal-content h3 {
+        font-size: 1.25rem;
     }
 }
