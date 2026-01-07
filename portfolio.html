@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio - Ashok – Web Developer & Technical Consultant</title>
+  <title>Portfolio - Karingal, Ashok – Web Developer & Technical Consultant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="View live examples of websites and projects by Ashok, including real estate, eCommerce, and training institute sites."
+    content="View live examples of websites and projects by Karingal, Ashok, including real estate, eCommerce, and training institute sites."
   />
   <style>
     :root {
@@ -150,6 +150,7 @@
       }
     }
 
+    /* Hero Section */
     .portfolio-hero {
       padding: 100px 32px 80px;
       text-align: center;
@@ -197,6 +198,7 @@
       line-height: 1.6;
     }
 
+    /* Filters */
     .filter-section {
       padding: 40px 32px;
       background: rgba(15, 23, 42, 0.4);
@@ -237,6 +239,7 @@
       color: white;
     }
 
+    /* Portfolio Grid */
     .portfolio-section {
       padding: 80px 32px;
       max-width: 1400px;
@@ -363,6 +366,7 @@
       color: var(--text-muted);
     }
 
+    /* CTA Section */
     .portfolio-cta {
       padding: 80px 32px;
       text-align: center;
@@ -453,20 +457,22 @@
         <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
           <div class="brand-badge">A</div>
           <div class="brand-text">
-            <h1>Ashok</h1>
+            <h1>Karingal, Ashok</h1>
             <span>Web Developer &amp; Technical Consultant</span>
           </div>
         </a>
       </div>
       <nav class="header-nav">
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
         <a href="portfolio.html">Portfolio</a>
-        <a href="blog-content.html">Blog content</a>
+        <a href="services.html">Services</a>
+        <a href="blog-content.html">Hire a Blog Writer</a>
         <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="portfolio-hero">
       <div class="portfolio-hero-content">
         <h1>Portfolio</h1>
@@ -477,6 +483,7 @@
       </div>
     </section>
 
+    <!-- Filter Section -->
     <section class="filter-section">
       <div class="filter-container">
         <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -487,8 +494,10 @@
       </div>
     </section>
 
+    <!-- Portfolio Grid -->
     <section class="portfolio-section">
       <div class="portfolio-grid">
+        <!-- MyBigNest.com -->
         <div class="portfolio-card" data-category="real-estate">
           <div class="portfolio-image">
             <div class="portfolio-image-icon">🏠</div>
@@ -514,6 +523,7 @@
           </div>
         </div>
 
+        <!-- VTUIT.com -->
         <div class="portfolio-card" data-category="training">
           <div class="portfolio-image">
             <div class="portfolio-image-icon">🎓</div>
@@ -539,6 +549,7 @@
           </div>
         </div>
 
+        <!-- NoLandsCakes.com -->
         <div class="portfolio-card" data-category="ecommerce">
           <div class="portfolio-image">
             <div class="portfolio-image-icon">🍰</div>
@@ -564,6 +575,7 @@
           </div>
         </div>
 
+        <!-- Legal Content Portfolio -->
         <div class="portfolio-card" data-category="content">
           <div class="portfolio-image">
             <div class="portfolio-image-icon">📝</div>
@@ -589,6 +601,7 @@
           </div>
         </div>
 
+        <!-- Real Estate Project -->
         <div class="portfolio-card" data-category="real-estate">
           <div class="portfolio-image">
             <div class="portfolio-image-icon">🏗️</div>
@@ -602,14 +615,12 @@
               https://www.move360t.com/ →
             </a>
             <p class="portfolio-description">
-              Ongoing development of a property listings platform hosted on Oracle Cloud. 
-              Focused on creating a fast, search-friendly frontend that makes property discovery 
-              intuitive and efficient.
+              Move360T is a real estate branding, property management, and market insights platform, offering featured listings, price analysis, real estate news, guest blogging, and verified agent discovery.
             </p>
             <div class="portfolio-features">
-              <span class="feature-tag">Oracle Cloud</span>
-              <span class="feature-tag">Property Search</span>
-              <span class="feature-tag">Fast Performance</span>
+              <span class="feature-tag">Real Estate Branding</span>
+              <span class="feature-tag">Property Management</span>
+              <span class="feature-tag">Market Insights</span>
             </div>
           </div>
         </div>
@@ -661,9 +672,58 @@
             </div>
           </div>
         </div>
+
+        <!-- Bakery - eCommerce -->
+        <div class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🎂</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
+              <div class="portfolio-name">Bakery - eCommerce</div>
+              <div class="portfolio-type">eCommerce · Bakery</div>
+            </div>
+            <a href="https://nolandscakes.onrender.com/" target="_blank" rel="noopener" class="portfolio-link">
+              https://nolandscakes.onrender.com/ →
+            </a>
+            <p class="portfolio-description">
+              From custom celebration cakes to artisan pastries, we craft the perfect treats for your special moments. Made with love, delivered with care.
+            </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">Custom Cakes</span>
+              <span class="feature-tag">Artisan Pastries</span>
+              <span class="feature-tag">Online Ordering</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI power tools -->
+        <div class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-image">
+            <div class="portfolio-image-icon">🤖</div>
+          </div>
+          <div class="portfolio-content">
+            <div class="portfolio-header">
+              <div class="portfolio-name">AI power tools</div>
+              <div class="portfolio-type">AI Tools · Productivity</div>
+            </div>
+            <a href="https://multi-tool-platform.vercel.app/" target="_blank" rel="noopener" class="portfolio-link">
+              https://multi-tool-platform.vercel.app/ →
+            </a>
+            <p class="portfolio-description">
+              Intelligent AI Tools for Modern Workflows to transform your productivity. From AI-powered image processing to intelligent document analysis, experience the future of digital tools.
+            </p>
+            <div class="portfolio-features">
+              <span class="feature-tag">AI-Powered</span>
+              <span class="feature-tag">Image Processing</span>
+              <span class="feature-tag">Document Analysis</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- CTA Section -->
     <section class="portfolio-cta">
       <div class="portfolio-cta-content">
         <h2>Want a Similar Site or Store?</h2>
@@ -676,23 +736,27 @@
     </section>
 
     <footer>
-      <span>© 2025 Ashok — Web Developer &amp; Technical Consultant</span>
+      <span>© 2025 Karingal, Ashok — Web Developer &amp; Technical Consultant</span>
       <span>Wix · Shopify · WordPress · React · Tailwind · Technical automation</span>
     </footer>
   </div>
 
   <script>
+    // Filter functionality
     document.addEventListener('DOMContentLoaded', function() {
       const filterButtons = document.querySelectorAll('.filter-btn');
       const portfolioCards = document.querySelectorAll('.portfolio-card');
 
       filterButtons.forEach(button => {
         button.addEventListener('click', function() {
+          // Update active state
           filterButtons.forEach(btn => btn.classList.remove('active'));
           this.classList.add('active');
 
+          // Get filter value
           const filterValue = this.getAttribute('data-filter');
 
+          // Filter cards
           portfolioCards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
             
