@@ -363,12 +363,25 @@
 
     .hero {
       background: radial-gradient(circle at 0 0, var(--hero-bg-start) 0, var(--hero-bg-mid) 42%, var(--hero-bg-end) 110%);
-      border-radius: 18px;
-      padding: 28px 24px 28px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 0;
+      padding: 48px 0;
+      border: none;
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
       position: relative;
       overflow: hidden;
       transition: background 0.3s ease;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      max-width: 100vw;
+    }
+
+    .hero-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
@@ -377,8 +390,12 @@
 
     @media (max-width: 1200px) {
       .hero {
+        padding: 40px 0;
+      }
+      .hero-wrapper {
         grid-template-columns: 1fr;
         gap: 24px;
+        padding: 0 24px;
       }
     }
 
@@ -1113,6 +1130,7 @@
 
     <main>
       <section class="hero" id="top">
+        <div class="hero-wrapper">
         <div class="hero-inner">
           <div class="hero-pill">
             <div class="hero-pill-dot"></div>
@@ -1222,6 +1240,7 @@
               <small>Scan · View work · Get in touch</small>
             </div>
           </div>
+        </div>
         </div>
     </section>
     
