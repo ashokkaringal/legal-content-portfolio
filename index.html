@@ -369,6 +369,17 @@
       position: relative;
       overflow: hidden;
       transition: background 0.3s ease;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 1200px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
     }
 
     .hero::after {
@@ -514,42 +525,129 @@
       font-weight: 500;
     }
 
-    .hero-right {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      text-align: right;
-      font-size: 13px;
-      color: #e5e7eb;
-      opacity: 0.85;
+    /* Hero Contact Form */
+    .hero-form-container {
+      position: relative;
+      z-index: 1;
     }
 
-    .hero-right-dot {
+    .hero-form-card {
+      background: rgba(15, 23, 42, 0.7);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-form-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: white;
+    }
+
+    .hero-form-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-form-group {
+      margin-bottom: 16px;
+    }
+
+    .hero-form-label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .hero-form-label .required {
+      color: var(--accent);
+    }
+
+    .hero-form-input,
+    .hero-form-textarea {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: white;
+      font-size: 14px;
+      font-family: var(--font-main);
+      transition: all 0.3s ease;
+    }
+
+    .hero-form-input:focus,
+    .hero-form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.1);
+    }
+
+    .hero-form-textarea {
+      min-height: 80px;
+      resize: vertical;
+    }
+
+    .hero-form-input::placeholder,
+    .hero-form-textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .hero-form-btn {
+      width: 100%;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
+      color: #0f172a;
+      box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: var(--card-bg-rgba);
-      margin-bottom: 4px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      backdrop-filter: blur(12px);
-      transition: background 0.3s ease;
+      justify-content: center;
+      gap: 8px;
     }
 
-    .hero-right-dot span {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: #22c55e;
+    .hero-form-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(56, 189, 248, 0.4);
     }
 
-    .hero-right small {
-      display: block;
-      color: #cbd5f5;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 12px;
+    .hero-form-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .hero-form-message {
+      display: none;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .hero-form-message.success {
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid rgba(16, 185, 129, 0.5);
+      color: #10b981;
+    }
+
+    .hero-form-message.error {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: #ef4444;
     }
 
     .section {
@@ -980,6 +1078,69 @@
             <span>Bonus:</span> Free homepage or store audit for the first consultation.
           </div>
                 </div>
+                
+        <div class="hero-form-container">
+          <div class="hero-form-card">
+            <h3>Get in Touch</h3>
+            <p>Send a quick message and I'll respond within 24 hours.</p>
+            
+            <form id="hero-contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="8a0ceaff-1f2c-4eb9-9f62-64c46e66bb07">
+              <input type="hidden" name="subject" value="New Contact Form Submission from Home Page">
+              <input type="hidden" name="from_name" value="Portfolio Contact Form">
+              
+              <div id="hero-form-message" class="hero-form-message"></div>
+              
+              <div class="hero-form-group">
+                <label class="hero-form-label" for="hero-name">
+                  Name <span class="required">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="hero-name" 
+                  name="name" 
+                  class="hero-form-input" 
+                  required 
+                  placeholder="Your name"
+                />
+              </div>
+
+              <div class="hero-form-group">
+                <label class="hero-form-label" for="hero-email">
+                  Email <span class="required">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="hero-email" 
+                  name="email" 
+                  class="hero-form-input" 
+                  required 
+                  placeholder="your.email@example.com"
+                />
+              </div>
+
+              <div class="hero-form-group">
+                <label class="hero-form-label" for="hero-message">
+                  Message <span class="required">*</span>
+                </label>
+                <textarea 
+                  id="hero-message" 
+                  name="message" 
+                  class="hero-form-textarea" 
+                  required 
+                  placeholder="Tell me about your project..."
+                ></textarea>
+              </div>
+
+              <input type="checkbox" name="botcheck" style="display: none;">
+
+              <button type="submit" class="hero-form-btn" id="hero-submit-btn">
+                <span id="hero-submit-text">Send Message</span>
+                <span id="hero-submit-loading" style="display: none;">Sending...</span>
+              </button>
+            </form>
+          </div>
+        </div>
     </section>
     
       <div class="layout">
@@ -1599,6 +1760,57 @@
           themeDropdown.classList.remove('active');
         });
       });
+
+      // Hero Contact Form Handling
+      const heroContactForm = document.getElementById('hero-contact-form');
+      const heroFormMessage = document.getElementById('hero-form-message');
+      const heroSubmitBtn = document.getElementById('hero-submit-btn');
+      const heroSubmitText = document.getElementById('hero-submit-text');
+      const heroSubmitLoading = document.getElementById('hero-submit-loading');
+
+      if (heroContactForm) {
+        heroContactForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          // Show loading state
+          heroSubmitBtn.disabled = true;
+          heroSubmitText.style.display = 'none';
+          heroSubmitLoading.style.display = 'inline';
+          heroFormMessage.style.display = 'none';
+
+          const formData = new FormData(heroContactForm);
+          
+          try {
+            const response = await fetch(heroContactForm.action, {
+              method: 'POST',
+              body: formData,
+              headers: {
+                'Accept': 'application/json'
+              }
+            });
+
+            const result = await response.json();
+
+            if (response.ok && result.success) {
+              heroFormMessage.style.display = 'block';
+              heroFormMessage.className = 'hero-form-message success';
+              heroFormMessage.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.';
+              heroContactForm.reset();
+            } else {
+              throw new Error(result.message || 'Form submission failed');
+            }
+          } catch (error) {
+            heroFormMessage.style.display = 'block';
+            heroFormMessage.className = 'hero-form-message error';
+            heroFormMessage.textContent = '✗ There was an error sending your message. Please try again later.';
+          } finally {
+            // Reset button state
+            heroSubmitBtn.disabled = false;
+            heroSubmitText.style.display = 'inline';
+            heroSubmitLoading.style.display = 'none';
+          }
+        });
+      }
     });
   </script>
 </body>
