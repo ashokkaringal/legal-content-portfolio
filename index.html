@@ -363,54 +363,22 @@
 
     .hero {
       background: radial-gradient(circle at 0 0, var(--hero-bg-start) 0, var(--hero-bg-mid) 42%, var(--hero-bg-end) 110%);
-      border-radius: 0;
-      padding: 48px 0;
-      border: none;
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.35);
+      border-radius: 18px;
+      padding: 20px 20px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
       position: relative;
       overflow: hidden;
       transition: background 0.3s ease;
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      margin-right: calc(-50vw + 50%);
-      max-width: 100vw;
-    }
-
-    .hero-wrapper {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 24px;
-      width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: 20px;
       align-items: start;
-      justify-items: stretch;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      min-width: 0;
-      width: 100%;
-    }
-
-    .hero-form-container {
-      position: relative;
-      z-index: 1;
-      min-width: 0;
-      width: 100%;
     }
 
     @media (max-width: 1200px) {
       .hero {
-        padding: 40px 0;
-      }
-      .hero-wrapper {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 0 24px;
       }
     }
 
@@ -428,17 +396,22 @@
       transition: background 0.3s ease;
     }
 
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero-pill {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       border-radius: 999px;
-      padding: 6px 12px;
+      padding: 5px 10px;
       background: var(--card-bg-rgba);
       border: 1px solid rgba(148, 163, 184, 0.6);
-      font-size: 13px;
+      font-size: 12px;
       color: #e5e7eb;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       backdrop-filter: blur(12px);
       transition: background 0.3s ease;
     }
@@ -456,9 +429,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-size: clamp(1.75rem, 3.5vw, 3rem);
       line-height: 1.2;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       max-width: 800px;
       letter-spacing: 0.01em;
       color: #f9fafb;
@@ -466,25 +439,26 @@
     }
 
     .hero-sub {
-      font-size: 16px;
+      font-size: 14px;
       color: #e5e7eb;
       max-width: 650px;
-      margin-bottom: 18px;
+      margin-bottom: 12px;
+      line-height: 1.5;
     }
 
     .hero-highlight {
       display: inline-flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
+      gap: 6px;
+      margin-bottom: 12px;
     }
 
     .hero-chip {
-      font-size: 13px;
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.12em;
       border-radius: 999px;
-      padding: 6px 10px;
+      padding: 4px 8px;
       border: 1px solid rgba(148, 163, 184, 0.55);
       background: var(--card-bg-rgba);
       color: #cbd5f5;
@@ -493,9 +467,9 @@
 
     .hero-actions {
       display: flex;
-      gap: 12px;
+      gap: 8px;
       flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
 
     .btn-primary,
@@ -503,9 +477,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 20px;
+      padding: 8px 16px;
       border-radius: 999px;
-      font-size: 15px;
+      font-size: 13px;
       border: 1px solid transparent;
       cursor: pointer;
       text-decoration: none;
@@ -539,9 +513,10 @@
     }
 
     .hero-note {
-      font-size: 13px;
+      font-size: 11px;
       color: #cbd5f5;
       opacity: 0.9;
+      margin-top: 4px;
     }
 
     .hero-note span {
@@ -550,29 +525,34 @@
     }
 
     /* Hero Contact Form */
+    .hero-form-container {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero-form-card {
       background: rgba(15, 23, 42, 0.7);
       border-radius: 16px;
-      padding: 24px;
+      padding: 18px;
       border: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
     }
 
     .hero-form-card h3 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       color: white;
     }
 
     .hero-form-card p {
-      font-size: 13px;
+      font-size: 11px;
       color: var(--text-muted);
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
     .hero-form-group {
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
     .hero-form-label {
@@ -590,12 +570,12 @@
     .hero-form-input,
     .hero-form-textarea {
       width: 100%;
-      padding: 10px 12px;
+      padding: 8px 10px;
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 8px;
       color: white;
-      font-size: 14px;
+      font-size: 13px;
       font-family: var(--font-main);
       transition: all 0.3s ease;
     }
@@ -609,7 +589,7 @@
     }
 
     .hero-form-textarea {
-      min-height: 80px;
+      min-height: 60px;
       resize: vertical;
     }
 
@@ -620,9 +600,9 @@
 
     .hero-form-btn {
       width: 100%;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 8px;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       background: linear-gradient(135deg, var(--btn-primary-start), var(--btn-primary-end));
       color: #0f172a;
@@ -671,34 +651,34 @@
 
     /* Hero QR Code Section */
     .hero-qr-section {
-      margin-top: 24px;
-      padding-top: 24px;
+      margin-top: 16px;
+      padding-top: 16px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
     }
 
     .hero-qr-section h4 {
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       color: white;
     }
 
     .hero-qr-section p {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 8px;
       line-height: 1.4;
     }
 
     .hero-qr-image-container {
       display: flex;
       justify-content: center;
-      margin: 12px 0;
+      margin: 8px 0;
     }
 
     .hero-qr-image-container img {
-      max-width: 120px;
+      max-width: 100px;
       width: 100%;
       height: auto;
       border-radius: 8px;
@@ -1135,7 +1115,6 @@
 
     <main>
       <section class="hero" id="top">
-        <div class="hero-wrapper">
         <div class="hero-inner">
           <div class="hero-pill">
             <div class="hero-pill-dot"></div>
@@ -1245,7 +1224,6 @@
               <small>Scan · View work · Get in touch</small>
             </div>
           </div>
-        </div>
         </div>
     </section>
     
