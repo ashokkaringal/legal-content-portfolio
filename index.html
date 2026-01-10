@@ -123,6 +123,24 @@
       color: var(--text-muted);
     }
 
+    .header-title-section {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 16px;
+    }
+
+    .header-main-title {
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      text-align: center;
+      color: #f9fafb;
+      margin: 0;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
     .header-nav {
       display: flex;
       align-items: center;
@@ -337,6 +355,17 @@
       header {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .header-title-section {
+        order: 1;
+        width: 100%;
+        margin: 12px 0;
+        justify-content: flex-start;
+      }
+
+      .header-main-title {
+        text-align: left;
       }
       
       .header-nav {
@@ -1068,6 +1097,9 @@
                         </div>
         </a>
                         </div>
+      <div class="header-title-section">
+        <h1 class="header-main-title">NextGen Website &amp; eCommerce AI Solutions</h1>
+      </div>
       <nav class="header-nav">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
