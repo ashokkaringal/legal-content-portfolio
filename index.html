@@ -1930,6 +1930,27 @@
             const result = await response.json();
 
             if (response.ok && result.success) {
+              // Send auto-reply email using EmailJS
+              const customerEmail = document.getElementById('hero-email').value;
+              const customerName = document.getElementById('hero-name').value;
+              
+              if (customerEmail && window.emailjs) {
+                emailjs.send(
+                  'service_auto_reply',
+                  'template_auto_reply',
+                  {
+                    to_email: customerEmail,
+                    to_name: customerName,
+                    from_name: 'Karingal, Ashok',
+                    reply_to: 'ashok.karingal@gmail.com',
+                    subject: 'Thank you for contacting us - We\'ll respond within 24 hours',
+                    message: 'Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok'
+                  }
+                ).catch(err => {
+                  console.log('Auto-reply email failed (non-critical):', err);
+                });
+              }
+              
               heroFormMessage.style.display = 'block';
               heroFormMessage.className = 'hero-form-message success';
               heroFormMessage.textContent = '✓ Thank you! Your message has been sent successfully. You will receive a confirmation email shortly. I\'ll get back to you within 24 hours.';
@@ -1950,6 +1971,17 @@
         });
       }
     });
+  </script>
+  
+  <!-- EmailJS for Auto-Reply Emails -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    // Initialize EmailJS - Replace with your Public Key from EmailJS dashboard
+    // Get it from: https://dashboard.emailjs.com/admin/integration
+    (function(){
+      // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key
+      // emailjs.init('YOUR_PUBLIC_KEY');
+    })();
   </script>
 </body>
 </html>
