@@ -79,9 +79,16 @@
     header {
       padding: 16px 0 20px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
+    }
+
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
     }
 
     .brand {
@@ -127,7 +134,7 @@
       font-size: clamp(1.5rem, 3vw, 2.5rem);
       font-weight: 700;
       color: #f9fafb;
-      margin: 0 0 12px 0;
+      margin: 0;
       line-height: 1.2;
       letter-spacing: 0.02em;
       text-align: left;
@@ -350,9 +357,14 @@
         align-items: flex-start;
       }
 
+      .header-content {
+        width: 100%;
+        order: 2;
+      }
+
       .header-title {
         width: 100%;
-        margin-bottom: 8px;
+        margin: 0;
         font-size: clamp(1.25rem, 4vw, 2rem);
         white-space: nowrap;
         overflow: hidden;
@@ -360,11 +372,10 @@
       }
       
       .header-nav {
-        order: 2;
         width: 100%;
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin-top: 12px;
+        margin-top: 0;
         gap: 6px;
       }
 
@@ -1088,16 +1099,18 @@
                         </div>
         </a>
                         </div>
-      <h1 class="header-title">NextGen Website &amp; eCommerce AI Solutions</h1>
-      <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="https://multi-tool-platform.vercel.app/" target="_blank" rel="noopener noreferrer">AI Power Tools</a>
-        <a href="blog-content.html">Hire a Blog Writer</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-      </nav>
+      <div class="header-content">
+        <h1 class="header-title">NextGen Website &amp; eCommerce AI Solutions</h1>
+        <nav class="header-nav">
+          <a href="index.html">Home</a>
+          <a href="portfolio.html">Portfolio</a>
+          <a href="services.html">Services</a>
+          <a href="https://multi-tool-platform.vercel.app/" target="_blank" rel="noopener noreferrer">AI Power Tools</a>
+          <a href="blog-content.html">Hire a Blog Writer</a>
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
       <div class="header-links">
         <div class="header-tag">Available for freelance &amp; collaboration</div>
         <div class="theme-selector">
