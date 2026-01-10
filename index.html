@@ -82,6 +82,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      position: relative;
     }
 
     .brand {
@@ -110,15 +111,21 @@
       display: flex;
       flex-direction: column;
       gap: 2px;
+      align-items: flex-start;
     }
 
     .brand-text .brand-title {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 28px;
+      font-weight: 700;
       letter-spacing: 0.02em;
       color: var(--text-main);
       margin: 0;
       white-space: nowrap;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 16px;
+      z-index: 1;
     }
 
     .brand-text h1 {
@@ -132,6 +139,11 @@
       font-size: 13px;
       color: var(--text-muted);
       white-space: nowrap;
+    }
+
+    .brand-cta {
+      margin-top: 8px;
+      font-size: 13px;
     }
 
     .header-nav {
@@ -1078,6 +1090,9 @@
             <div class="brand-title">NextGen Website &amp; eCommerce AI Solutions</div>
             <h1>Karingal, Ashok</h1>
             <span>Web Developer &amp; Technical Consultant</span>
+            <a class="header-cta brand-cta" href="contact.html">
+              Book a free consultation
+            </a>
                         </div>
         </a>
                         </div>
@@ -1121,9 +1136,6 @@
                 </div>
             </div>
         </div>
-        <a class="header-cta" href="contact.html">
-          Book a free consultation
-        </a>
                 </div>
     </header>
 
