@@ -131,6 +131,7 @@
       line-height: 1.2;
       letter-spacing: 0.02em;
       text-align: left;
+      white-space: nowrap;
     }
 
     .header-nav {
@@ -353,6 +354,9 @@
         width: 100%;
         margin-bottom: 8px;
         font-size: clamp(1.25rem, 4vw, 2rem);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
       
       .header-nav {
