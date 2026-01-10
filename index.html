@@ -77,18 +77,20 @@
     }
 
     header {
-      padding: 16px 0 20px;
+      padding: 20px 0 24px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 16px;
       position: relative;
+      flex-wrap: wrap;
     }
 
     .brand {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
+      flex: 0 0 auto;
     }
 
     .brand-badge {
@@ -105,27 +107,25 @@
       font-size: 18px;
       box-shadow: 0 0 20px rgba(var(--accent-rgb), 0.25);
       transition: background 0.3s ease, box-shadow 0.3s ease;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 4px;
+      align-items: flex-start;
     }
 
     .brand-text .brand-title {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: 0.02em;
       color: var(--text-main);
-      margin: 0;
+      margin: 0 0 4px 0;
       white-space: nowrap;
-      text-align: center;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      top: 16px;
-      z-index: 1;
+      line-height: 1.2;
     }
 
     .brand-text h1 {
@@ -142,8 +142,9 @@
     }
 
     .brand-cta {
-      margin-top: 8px;
+      margin-top: 10px;
       font-size: 13px;
+      align-self: flex-start;
     }
 
     .header-nav {
