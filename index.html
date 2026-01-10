@@ -1106,6 +1106,12 @@
       gap: 4px;
     }
   </style>
+  
+  <!-- Cloudflare Turnstile CAPTCHA -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <div class="page">
@@ -1206,12 +1212,10 @@
             <h3>Get in Touch</h3>
             <p>Send a quick message and I'll respond within 24 hours.</p>
             
-            <form id="hero-contact-form" action="https://formsubmit.co/ajax/ashok.karingal@gmail.com" method="POST">
-              <input type="hidden" name="_subject" value="New Contact Form Submission from Home Page">
-              <input type="hidden" name="_captcha" value="true">
-              <input type="hidden" name="_autoresponse" value="Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok">
-              <input type="hidden" name="_replyto" value="email">
-              <input type="hidden" name="_template" value="box">
+            <form id="hero-contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="8a0ceaff-1f2c-4eb9-9f62-64c46e66bb07">
+              <input type="hidden" name="subject" value="New Contact Form Submission from Home Page">
+              <input type="hidden" name="from_name" value="Portfolio Contact Form">
               
               <div id="hero-form-message" class="hero-form-message"></div>
               
@@ -1257,6 +1261,9 @@
               </div>
 
               <input type="checkbox" name="botcheck" style="display: none;">
+
+              <!-- Cloudflare Turnstile Widget -->
+              <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark" style="margin-bottom: 12px;"></div>
 
               <button type="submit" class="hero-form-btn" id="hero-submit-btn">
                 <span id="hero-submit-text">Send Message</span>
@@ -1899,6 +1906,13 @@
         });
       });
 
+      // Initialize EmailJS
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init({
+          publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'
+        });
+      }
+
       // Hero Contact Form Handling
       const heroContactForm = document.getElementById('hero-contact-form');
       const heroFormMessage = document.getElementById('hero-form-message');
@@ -1916,7 +1930,31 @@
           heroSubmitLoading.style.display = 'inline';
           heroFormMessage.style.display = 'none';
 
+          // Get Turnstile token
+          let turnstileToken = '';
+          try {
+            const turnstileWidget = document.querySelector('.cf-turnstile');
+            if (window.turnstile && turnstileWidget) {
+              turnstileToken = window.turnstile.getResponse(turnstileWidget);
+            }
+          } catch (turnstileError) {
+            console.log('Turnstile token retrieval:', turnstileError);
+          }
+
+          if (!turnstileToken) {
+            heroFormMessage.style.display = 'block';
+            heroFormMessage.className = 'hero-form-message error';
+            heroFormMessage.textContent = '✗ Please complete the security verification.';
+            heroSubmitBtn.disabled = false;
+            heroSubmitText.style.display = 'inline';
+            heroSubmitLoading.style.display = 'none';
+            return;
+          }
+
           const formData = new FormData(heroContactForm);
+          
+          // Add Turnstile token to form data
+          formData.append('cf-turnstile-response', turnstileToken);
           
           try {
             const response = await fetch(heroContactForm.action, {
@@ -1930,31 +1968,45 @@
             const result = await response.json();
 
             if (response.ok && result.success) {
-              // Send auto-reply email using EmailJS
-              const customerEmail = document.getElementById('hero-email').value;
+              // Get form values for auto-reply
               const customerName = document.getElementById('hero-name').value;
-              
-              if (customerEmail && window.emailjs) {
-                emailjs.send(
-                  'service_auto_reply',
-                  'template_auto_reply',
-                  {
-                    to_email: customerEmail,
-                    to_name: customerName,
-                    from_name: 'Karingal, Ashok',
-                    reply_to: 'ashok.karingal@gmail.com',
-                    subject: 'Thank you for contacting us - We\'ll respond within 24 hours',
-                    message: 'Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok'
-                  }
-                ).catch(err => {
-                  console.log('Auto-reply email failed (non-critical):', err);
-                });
+              const customerEmail = document.getElementById('hero-email').value;
+
+              // Send auto-reply email via EmailJS
+              if (typeof emailjs !== 'undefined' && customerEmail) {
+                try {
+                  await emailjs.send(
+                    'YOUR_EMAILJS_SERVICE_ID',
+                    'YOUR_EMAILJS_TEMPLATE_ID',
+                    {
+                      to_email: customerEmail,
+                      to_name: customerName,
+                      from_name: 'Karingal, Ashok',
+                      reply_to: 'ashok.karingal@gmail.com',
+                      subject: 'Thank you for contacting us - We\'ll respond within 24 hours',
+                      message: 'Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok'
+                    }
+                  );
+                } catch (emailError) {
+                  console.log('Auto-reply email failed (non-critical):', emailError);
+                  // Don't show error to user - auto-reply is optional
+                }
               }
-              
+
               heroFormMessage.style.display = 'block';
               heroFormMessage.className = 'hero-form-message success';
               heroFormMessage.textContent = '✓ Thank you! Your message has been sent successfully. You will receive a confirmation email shortly. I\'ll get back to you within 24 hours.';
               heroContactForm.reset();
+              
+              // Reset Turnstile
+              try {
+                const turnstileWidget = document.querySelector('.cf-turnstile');
+                if (window.turnstile && turnstileWidget) {
+                  window.turnstile.reset(turnstileWidget);
+                }
+              } catch (resetError) {
+                console.log('Turnstile reset error:', resetError);
+              }
             } else {
               throw new Error(result.message || 'Form submission failed');
             }
@@ -1971,17 +2023,6 @@
         });
       }
     });
-  </script>
-  
-  <!-- EmailJS for Auto-Reply Emails -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    // Initialize EmailJS - Replace with your Public Key from EmailJS dashboard
-    // Get it from: https://dashboard.emailjs.com/admin/integration
-    (function(){
-      // TODO: Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS Public Key
-      // emailjs.init('YOUR_PUBLIC_KEY');
-    })();
   </script>
 </body>
 </html>
