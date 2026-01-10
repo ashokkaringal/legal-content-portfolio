@@ -450,12 +450,6 @@
       }
     }
   </style>
-  
-  <!-- Cloudflare Turnstile CAPTCHA -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-  
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
   <div class="page">
@@ -593,9 +587,6 @@
             <!-- Honeypot field for spam protection -->
             <input type="checkbox" name="botcheck" style="display: none;">
 
-            <!-- Cloudflare Turnstile Widget -->
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="dark" style="margin-bottom: 16px;"></div>
-
             <button type="submit" class="btn-primary" id="submit-btn">
               <span id="submit-text">Send Message</span>
               <span id="submit-loading" style="display: none;">Sending...</span>
@@ -629,13 +620,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize EmailJS
-      if (typeof emailjs !== 'undefined') {
-        emailjs.init({
-          publicKey: 'YOUR_EMAILJS_PUBLIC_KEY'
-        });
-      }
-
       const contactForm = document.getElementById('contact-form');
       const formMessage = document.getElementById('form-message');
       const submitBtn = document.getElementById('submit-btn');
@@ -652,33 +636,7 @@
           submitLoading.style.display = 'inline';
           formMessage.style.display = 'none';
 
-          // Get Turnstile token
-          let turnstileToken = '';
-          try {
-            const turnstileWidget = document.querySelector('.cf-turnstile');
-            if (window.turnstile && turnstileWidget) {
-              turnstileToken = window.turnstile.getResponse(turnstileWidget);
-            }
-          } catch (turnstileError) {
-            console.log('Turnstile token retrieval:', turnstileError);
-          }
-
-          if (!turnstileToken) {
-            formMessage.style.display = 'block';
-            formMessage.style.background = 'rgba(239, 68, 68, 0.2)';
-            formMessage.style.border = '1px solid rgba(239, 68, 68, 0.5)';
-            formMessage.style.color = '#ef4444';
-            formMessage.textContent = '✗ Please complete the security verification.';
-            submitBtn.disabled = false;
-            submitText.style.display = 'inline';
-            submitLoading.style.display = 'none';
-            return;
-          }
-
           const formData = new FormData(contactForm);
-          
-          // Add Turnstile token to form data
-          formData.append('cf-turnstile-response', turnstileToken);
           
           try {
             const response = await fetch(contactForm.action, {
@@ -692,47 +650,12 @@
             const result = await response.json();
 
             if (response.ok && result.success) {
-              // Get form values for auto-reply
-              const customerName = document.getElementById('name').value;
-              const customerEmail = document.getElementById('email').value;
-
-              // Send auto-reply email via EmailJS
-              if (typeof emailjs !== 'undefined' && customerEmail) {
-                try {
-                  await emailjs.send(
-                    'YOUR_EMAILJS_SERVICE_ID',
-                    'YOUR_EMAILJS_TEMPLATE_ID',
-                    {
-                      to_email: customerEmail,
-                      to_name: customerName,
-                      from_name: 'Karingal, Ashok',
-                      reply_to: 'ashok.karingal@gmail.com',
-                      subject: 'Thank you for contacting us - We\'ll respond within 24 hours',
-                      message: 'Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok'
-                    }
-                  );
-                } catch (emailError) {
-                  console.log('Auto-reply email failed (non-critical):', emailError);
-                  // Don't show error to user - auto-reply is optional
-                }
-              }
-
               formMessage.style.display = 'block';
               formMessage.style.background = 'rgba(16, 185, 129, 0.2)';
               formMessage.style.border = '1px solid rgba(16, 185, 129, 0.5)';
               formMessage.style.color = '#10b981';
-              formMessage.textContent = '✓ Thank you! Your message has been sent successfully. You will receive a confirmation email shortly. I\'ll get back to you within 24 hours.';
+              formMessage.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.';
               contactForm.reset();
-              
-              // Reset Turnstile
-              try {
-                const turnstileWidget = document.querySelector('.cf-turnstile');
-                if (window.turnstile && turnstileWidget) {
-                  window.turnstile.reset(turnstileWidget);
-                }
-              } catch (resetError) {
-                console.log('Turnstile reset error:', resetError);
-              }
             } else {
               throw new Error(result.message || 'Form submission failed');
             }
