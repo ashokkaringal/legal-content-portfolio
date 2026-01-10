@@ -523,13 +523,11 @@
           <h2>Send a Message</h2>
           <p>Fill out the form below and I'll get back to you as soon as possible.</p>
 
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="8a0ceaff-1f2c-4eb9-9f62-64c46e66bb07">
-            <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-            <input type="hidden" name="from_name" value="Portfolio Contact Form">
-            <input type="hidden" name="autoresponder" value="true">
-            <input type="hidden" name="autoresponder_subject" value="Thank you for contacting us - We'll respond within 24 hours">
-            <input type="hidden" name="autoresponder_message" value="Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok">
+          <form id="contact-form" action="https://formsubmit.co/ajax/ashok.karingal@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Thank you for reaching out! We have received your message and will get back to you within 24 hours. Best regards, Karingal, Ashok">
+            <input type="hidden" name="_template" value="box">
             
             <div id="form-message" style="display: none; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.95rem;"></div>
             
@@ -653,11 +651,12 @@
             const result = await response.json();
 
             if (response.ok && result.success) {
+              // FormSubmit automatically sends auto-reply email (configured via _autoresponse parameter)
               formMessage.style.display = 'block';
               formMessage.style.background = 'rgba(16, 185, 129, 0.2)';
               formMessage.style.border = '1px solid rgba(16, 185, 129, 0.5)';
               formMessage.style.color = '#10b981';
-              formMessage.textContent = '✓ Thank you! Your message has been sent successfully. I\'ll get back to you within 24 hours.';
+              formMessage.textContent = '✓ Thank you! Your message has been sent successfully. You will receive a confirmation email shortly. I\'ll get back to you within 24 hours.';
               contactForm.reset();
             } else {
               throw new Error(result.message || 'Form submission failed');
