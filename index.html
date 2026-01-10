@@ -79,16 +79,9 @@
     header {
       padding: 16px 0 20px;
       display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .header-top-row {
-      display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      width: 100%;
     }
 
     .brand {
@@ -130,32 +123,21 @@
       color: var(--text-muted);
     }
 
-    .header-title-section {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 8px 0;
-    }
-
-    .header-main-title {
+    .header-title {
       font-size: clamp(1.5rem, 3vw, 2.5rem);
       font-weight: 700;
-      text-align: center;
       color: #f9fafb;
-      margin: 0;
+      margin: 0 0 12px 0;
       line-height: 1.2;
       letter-spacing: 0.02em;
+      text-align: left;
     }
 
     .header-nav {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 8px;
       font-size: 13px;
-      width: 100%;
-      flex-wrap: wrap;
     }
     
     .header-nav a {
@@ -362,32 +344,31 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      .header-top-row {
+      header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
       }
 
-      .header-title-section {
+      .header-title {
         width: 100%;
-        margin: 8px 0;
-        justify-content: flex-start;
-      }
-
-      .header-main-title {
-        text-align: left;
+        margin-bottom: 8px;
+        font-size: clamp(1.25rem, 4vw, 2rem);
       }
       
       .header-nav {
+        order: 2;
         width: 100%;
         justify-content: flex-start;
         flex-wrap: wrap;
+        margin-top: 12px;
         gap: 6px;
       }
 
       .header-links {
         justify-content: flex-start;
+        order: 3;
         width: 100%;
+        margin-top: 8px;
       }
       
       .theme-dropdown {
@@ -1094,17 +1075,26 @@
 <body>
   <div class="page">
     <header>
-      <div class="header-top-row">
-        <div class="brand">
-          <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
-            <div class="brand-badge">A</div>
-            <div class="brand-text">
-              <h1>Karingal, Ashok</h1>
-              <span>Web Developer &amp; Technical Consultant</span>
-            </div>
-          </a>
-        </div>
-        <div class="header-links">
+      <div class="brand">
+        <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+          <div class="brand-badge">A</div>
+          <div class="brand-text">
+            <h1>Karingal, Ashok</h1>
+            <span>Web Developer &amp; Technical Consultant</span>
+                        </div>
+        </a>
+                        </div>
+      <h1 class="header-title">NextGen Website &amp; eCommerce AI Solutions</h1>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="https://multi-tool-platform.vercel.app/" target="_blank" rel="noopener noreferrer">AI Power Tools</a>
+        <a href="blog-content.html">Hire a Blog Writer</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="header-links">
         <div class="header-tag">Available for freelance &amp; collaboration</div>
         <div class="theme-selector">
           <button class="theme-selector-btn" id="themeSelectorBtn">Theme</button>
@@ -1135,19 +1125,7 @@
                 </div>
             </div>
         </div>
-      </div>
-      <div class="header-title-section">
-        <h1 class="header-main-title">NextGen Website &amp; eCommerce AI Solutions</h1>
-      </div>
-      <nav class="header-nav">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="https://multi-tool-platform.vercel.app/" target="_blank" rel="noopener noreferrer">AI Power Tools</a>
-        <a href="blog-content.html">Hire a Blog Writer</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-      </nav>
+                </div>
     </header>
 
     <main>
