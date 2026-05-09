@@ -1207,7 +1207,7 @@
             <h3>Get in Touch</h3>
             <p>Send a quick message and we'll respond within 24 hours.</p>
             
-            <form id="hero-contact-form" action="https://formsubmit.co/deepaashok1977@gmail.com" method="POST">
+            <form id="hero-contact-form" action="https://formsubmit.co/4f7cb65d643d6a942c190830a04118da" method="POST">
               <input type="hidden" name="_subject" value="New Contact Form Submission from Home Page">
               <input type="hidden" name="_captcha" value="false">
               
@@ -1907,7 +1907,7 @@
       const heroSubmitBtn = document.getElementById('hero-submit-btn');
       const heroSubmitText = document.getElementById('hero-submit-text');
       const heroSubmitLoading = document.getElementById('hero-submit-loading');
-      const formSubmitAjax = 'https://formsubmit.co/ajax/deepaashok1977@gmail.com';
+      const formSubmitAjax = 'https://formsubmit.co/ajax/4f7cb65d643d6a942c190830a04118da';
 
       if (heroContactForm) {
         heroContactForm.addEventListener('submit', async (e) => {
@@ -1927,7 +1927,8 @@
               body: formData,
               headers: {
                 'Accept': 'application/json'
-              }
+              },
+              referrerPolicy: 'unsafe-url'
             });
 
             const text = await response.text();

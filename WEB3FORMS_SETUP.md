@@ -2,29 +2,38 @@
 
 ## Production (live site)
 
-The **home hero** form in [`index.html`](index.html) and the **contact** form in [`contact.html`](contact.html) submit to **[FormSubmit](https://formsubmit.co)**:
+The **home hero** form in [`index.html`](index.html) and the **contact** form in [`contact.html`](contact.html) submit to **[FormSubmit](https://formsubmit.co)** using an **invisible form ID** (no public Gmail in markup):
 
-- Recipient: **`deepaashok1977@gmail.com`** (set in `action` / AJAX URL — not in dashboard secret keys)
-- JavaScript POSTs to: `https://formsubmit.co/ajax/deepaashok1977@gmail.com`
-- Subjects via hidden `_subject`; captcha reduced with `_captcha=false`; spam honeypot field `_honey`
+| Use | URL |
+| --- | --- |
+| HTML `action=""` / non-JS submit | `https://formsubmit.co/4f7cb65d643d6a942c190830a04118da` |
+| JavaScript AJAX `fetch()` | `https://formsubmit.co/ajax/4f7cb65d643d6a942c190830a04118da` |
 
-### One‑time activation (required)
+Submissions deliver to **`deepaashok1977@gmail.com`** (associated with this ID inside FormSubmit). Hidden fields include `_subject`, `_captcha=false`, and `_honey` honeypot.
 
-FormSubmit sends **deepaashok1977@gmail.com** an email with **“Activate Form”** after the **first** test submission (or endpoint hit). Until you click that link, the JSON response explains that activation is pending and mail will not relay.
+AJAX requests set **`referrerPolicy: 'unsafe-url'`** so FormSubmit reliably receives full page URLs (helps with spam checks and referrer-based rules).
 
-### Why FormSubmit replaced Web3Forms here
+### FormSubmit activation (“Activate Form”) issues
 
-Web3Forms delivers only to the mailbox tied to the **`access_key`**. Updating the inbox in Git requires a **new** key from [web3forms.com](https://web3forms.com). FormSubmit endpoints embed the Gmail address directly, so the inbox can be enforced in code.
+Until the form is **activated once**, submits return JSON like *“This form needs Activation…”* and FormSend queues mail.
+
+If the button in FormSubmit’s email shows **“Not a valid link” / “Confirmation token not found”**:
+
+1. **Copy the activate link as plain text**: long press / “Copy link” → paste into Chrome/Safari address bar so nothing is clipped.
+2. **Try another browser** or **private window** – some mail apps open an embedded browser that mishandles redirects.
+3. **Trigger a fresh activation**: after deploy, submit once from **`https://ashokkaringal.github.io/legal-content-portfolio/`** (`index.html` or `contact.html`) and use the **new** email’s link within ~24–48 hours.
+4. **Use FormSubmit Help / support** (`https://formsubmit.co/help` → contact) if the link keeps failing; they can resend or unblock the token.
+
+The **random ID** (`4f7cb65d643d6a942c190830a04118da`) replaces the naked email everywhere in markup; activation still must complete on FormSubmit’s side.
 
 ---
 
 ## Legacy: Web3Forms (optional reference)
 
-Previously the forms used Web3Forms with an `access_key`. To use Web3Forms again:
+Previously the forms used Web3Forms with an `access_key`. To revert:
 
 1. At [web3forms.com](https://web3forms.com), generate an access key for `deepaashok1977@gmail.com`.
 2. Set `action="https://api.web3forms.com/submit"` and restore `<input type="hidden" name="access_key" value="YOUR_KEY">`.
-3. Align your JavaScript `fetch()` URL with the same POST endpoint.
+3. Point `fetch()` at the Web3Forms URL and restore their success-shape handling.
 
-The old portfolio key routed mail to **`ashok.karingal@gmail.com`**; swapping only hidden text fields in HTML **cannot** retarget delivery without rotating that key.
-
+An old portfolio key routed mail to **`ashok.karingal@gmail.com`** until we moved off Web3Forms.

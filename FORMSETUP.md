@@ -1,9 +1,7 @@
 # Contact Form Email Setup Instructions
 
 ## Current Status
-The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** targeting **`deepaashok1977@gmail.com`**. Confirm the one‑time **“Activate Form”** email in that inbox before testing in production.
-
-More detail: **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** (covers FormSubmit on the live site and legacy Web3Forms notes).
+The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with invisible ID **`4f7cb65d643d6a942c190830a04118da`** — mail goes to **`deepaashok1977@gmail.com`**. You still need FormSubmit’s one‑time **“Activate Form”** step once; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if the activation link errors.
 
 ## Setup Steps (alternatives — not wired in repo)
 
