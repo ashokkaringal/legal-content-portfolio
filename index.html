@@ -1207,9 +1207,11 @@
             <h3>Get in Touch</h3>
             <p>Send a quick message and we'll respond within 24 hours.</p>
             
+            <!-- FormSubmit invisible id (must match activation email): 4f7cb65d643d6a942c190830a04118da -->
             <form id="hero-contact-form" action="https://formsubmit.co/4f7cb65d643d6a942c190830a04118da" method="POST">
               <input type="hidden" name="_subject" value="New Contact Form Submission from Home Page">
               <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_next" value="https://ashokkaringal.github.io/legal-content-portfolio/index.html?contact=submitted">
               
               <div id="hero-form-message" class="hero-form-message"></div>
               
@@ -1901,71 +1903,25 @@
         });
       });
 
-      // Hero Contact Form Handling
-      const heroContactForm = document.getElementById('hero-contact-form');
-      const heroFormMessage = document.getElementById('hero-form-message');
-      const heroSubmitBtn = document.getElementById('hero-submit-btn');
-      const heroSubmitText = document.getElementById('hero-submit-text');
-      const heroSubmitLoading = document.getElementById('hero-submit-loading');
-      const formSubmitAjax = 'https://formsubmit.co/ajax/4f7cb65d643d6a942c190830a04118da';
-
-      if (heroContactForm) {
-        heroContactForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          // Show loading state
-          heroSubmitBtn.disabled = true;
-          heroSubmitText.style.display = 'none';
-          heroSubmitLoading.style.display = 'inline';
-          heroFormMessage.style.display = 'none';
-
-          const formData = new FormData(heroContactForm);
-          
-          try {
-            const response = await fetch(formSubmitAjax, {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'Accept': 'application/json'
-              },
-              referrerPolicy: 'unsafe-url'
-            });
-
-            const text = await response.text();
-            let result = {};
-            try {
-              result = text ? JSON.parse(text) : {};
-            } catch (parseErr) {
-              throw new Error('Unexpected response from form service.');
-            }
-
-            const success =
-              result.success === true ||
-              result.success === 'true';
-            if (response.ok && success) {
-              heroFormMessage.style.display = 'block';
-              heroFormMessage.className = 'hero-form-message success';
-              heroFormMessage.textContent = '✓ Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
-              heroContactForm.reset();
-            } else {
-              throw new Error(result.message || 'Form submission failed');
-            }
-          } catch (error) {
-            heroFormMessage.style.display = 'block';
-            heroFormMessage.className = 'hero-form-message error';
-            heroFormMessage.textContent =
-              '✗ ' +
-              (error instanceof Error
-                ? error.message
-                : 'There was an error sending your message. Please try again later.');
-          } finally {
-            // Reset button state
-            heroSubmitBtn.disabled = false;
-            heroSubmitText.style.display = 'inline';
-            heroSubmitLoading.style.display = 'none';
+      // Hero form: native POST to FormSubmit (_next sends user back here with ?contact=submitted)
+      (function () {
+        const heroFormMessage = document.getElementById('hero-form-message');
+        if (!heroFormMessage) return;
+        var q = new URLSearchParams(window.location.search);
+        if (q.get('contact') === 'submitted') {
+          heroFormMessage.style.display = 'block';
+          heroFormMessage.className = 'hero-form-message success';
+          heroFormMessage.textContent =
+            '✓ Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+          var card = heroFormMessage.closest('.hero-form-card');
+          if (card && card.scrollIntoView) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
-        });
-      }
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+          }
+        }
+      })();
     });
   </script>
 </body>
