@@ -524,10 +524,9 @@
           <h2>Send a Message</h2>
           <p>Fill out the form below and we'll get back to you as soon as possible.</p>
 
-          <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="8a0ceaff-1f2c-4eb9-9f62-64c46e66bb07">
-            <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-            <input type="hidden" name="from_name" value="Portfolio Contact Form">
+          <form id="contact-form" action="https://formsubmit.co/deepaashok1977@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio">
+            <input type="hidden" name="_captcha" value="false">
             
             <div id="form-message" style="display: none; padding: 16px; border-radius: 12px; margin-bottom: 24px; font-size: 0.95rem;"></div>
             
@@ -585,8 +584,8 @@
               ></textarea>
             </div>
 
-            <!-- Honeypot field for spam protection -->
-            <input type="checkbox" name="botcheck" style="display: none;">
+            <!-- FormSubmit honeypot (leave empty) -->
+            <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;">
 
             <button type="submit" class="btn-primary" id="submit-btn">
               <span id="submit-text">Send Message</span>
@@ -626,6 +625,7 @@
       const submitBtn = document.getElementById('submit-btn');
       const submitText = document.getElementById('submit-text');
       const submitLoading = document.getElementById('submit-loading');
+      const formSubmitAjax = 'https://formsubmit.co/ajax/deepaashok1977@gmail.com';
 
       if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -640,7 +640,7 @@
           const formData = new FormData(contactForm);
           
           try {
-            const response = await fetch(contactForm.action, {
+            const response = await fetch(formSubmitAjax, {
               method: 'POST',
               body: formData,
               headers: {
@@ -648,9 +648,18 @@
               }
             });
 
-            const result = await response.json();
+            const text = await response.text();
+            let result = {};
+            try {
+              result = text ? JSON.parse(text) : {};
+            } catch (parseErr) {
+              throw new Error('Unexpected response from form service.');
+            }
 
-            if (response.ok && result.success) {
+            const success =
+              result.success === true ||
+              result.success === 'true';
+            if (response.ok && success) {
               formMessage.style.display = 'block';
               formMessage.style.background = 'rgba(16, 185, 129, 0.2)';
               formMessage.style.border = '1px solid rgba(16, 185, 129, 0.5)';
@@ -665,7 +674,11 @@
             formMessage.style.background = 'rgba(239, 68, 68, 0.2)';
             formMessage.style.border = '1px solid rgba(239, 68, 68, 0.5)';
             formMessage.style.color = '#ef4444';
-            formMessage.textContent = '✗ There was an error sending your message. Please try again later.';
+            formMessage.textContent =
+              '✗ ' +
+              (error instanceof Error
+                ? error.message
+                : 'There was an error sending your message. Please try again later.');
           } finally {
             // Reset button state
             submitBtn.disabled = false;

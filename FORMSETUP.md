@@ -1,11 +1,13 @@
 # Contact Form Email Setup Instructions
 
 ## Current Status
-The contact form is currently set up to use **Formspree**, but you need to configure it with your own Formspree account to receive emails.
+The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** targeting **`deepaashok1977@gmail.com`**. Confirm the one‑time **“Activate Form”** email in that inbox before testing in production.
 
-## Setup Steps
+More detail: **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** (covers FormSubmit on the live site and legacy Web3Forms notes).
 
-### Option 1: Formspree (Recommended - Free for 50 submissions/month)
+## Setup Steps (alternatives — not wired in repo)
+
+### Option A: Formspree
 
 1. **Sign up for Formspree:**
    - Go to https://formspree.io/
@@ -29,7 +31,7 @@ The contact form is currently set up to use **Formspree**, but you need to confi
    - Enable email notifications
    - (Optional) Set up custom email templates
 
-### Option 2: EmailJS (Alternative - Free for 200 emails/month)
+### Option B: EmailJS (Alternative - Free for 200 emails/month)
 
 If you prefer EmailJS instead:
 
@@ -48,7 +50,7 @@ If you prefer EmailJS instead:
    - Add EmailJS script and configuration
    - Update the JavaScript to use EmailJS API
 
-### Option 3: Web3Forms (No signup required)
+### Option C: Web3Forms
 
 1. **Get your access key:**
    - Go to https://web3forms.com/
@@ -68,12 +70,10 @@ After setup:
 
 ## Current Implementation
 
-The form currently:
-- ✅ Has proper validation
-- ✅ Shows loading state during submission
-- ✅ Displays success/error messages
-- ✅ Has spam protection (honeypot field)
-- ⚠️ Needs Formspree endpoint configured to actually send emails
+Deployed forms (`index.html` hero + `contact.html`):
+- ✅ FormSubmit POST with JSON response handling
+- ✅ Subjects via `_subject`, honeypot `_honey`, `_captcha=false`
+- ✅ Recipient in markup: **`deepaashok1977@gmail.com`**
 
 ## Need Help?
 
