@@ -1,7 +1,7 @@
 # Contact Form Email Setup Instructions
 
 ## Current Status
-The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with invisible ID **`4f7cb65d643d6a942c190830a04118da`** — mail goes to **`deepaashok1977@gmail.com`**. You still need FormSubmit’s one‑time **“Activate Form”** step once; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if the activation link errors.
+The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with **`action="https://formsubmit.co/deepaashok1977@gmail.com"`** and **`method="POST"`** (same layout as FormSubmit’s site). You may still need FormSubmit’s one‑time **“Activate Form”** step; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if activation links misbehave in Gmail.
 
 ## Setup Steps (alternatives — not wired in repo)
 
@@ -69,9 +69,9 @@ After setup:
 ## Current Implementation
 
 Deployed forms (`index.html` hero + `contact.html`):
-- ✅ FormSubmit POST with JSON response handling
-- ✅ Subjects via `_subject`, honeypot `_honey`, `_captcha=false`
-- ✅ Recipient in markup: **`deepaashok1977@gmail.com`**
+- ✅ FormSubmit **`POST`** to **`https://formsubmit.co/deepaashok1977@gmail.com`** (homepage pattern)
+- ✅ **`_subject`**, **`_next`** return URL, **`_honey`**, **`_captcha=false`**
+- ✅ Recipient: **`deepaashok1977@gmail.com`**
 
 ## Need Help?
 

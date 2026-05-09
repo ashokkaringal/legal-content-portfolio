@@ -2,37 +2,32 @@
 
 ## Production (live site)
 
-The **home hero** form in [`index.html`](index.html) and the **contact** form in [`contact.html`](contact.html) submit to **[FormSubmit](https://formsubmit.co)** using this **invisible form ID** in `action` (no naked Gmail in markup):
+Forms follow **[FormSubmit’s basic pattern](https://formsubmit.co/)**: `POST` to your address on their host.
 
-`https://formsubmit.co/4f7cb65d643d6a942c190830a04118da`
+```html
+<form action="https://formsubmit.co/deepaashok1977@gmail.com" method="POST">
+```
 
-- **Method:** normal browser **`POST`** (JavaScript does **not** intercept with `fetch`; this matches FormSubmit’s basic HTML flow).
-- **After submit:** hidden **`_next`** sends the visitor back to **`index.html?contact=submitted`** or **`contact.html?sent=1`**, and a short script shows the green thank-you text.
-- Other hidden fields: **`_subject`**, **`_captcha=false`**, honeypot **`_honey`**.
+Implemented in:
 
-Submissions are delivered to **`deepaashok1977@gmail.com`** (bound to that ID inside FormSubmit).
+- [`index.html`](index.html) — hero “Get in Touch” form  
+- [`contact.html`](contact.html) — full contact form  
 
-### FormSubmit activation (“Activate Form”) issues
+**Also set:** `_subject`, `_next` (return to your site after submit), `_captcha=false`, honeypot `_honey`. Submissions go to **`deepaashok1977@gmail.com`**.
 
-Until the form is **activated once**, submits return JSON like *“This form needs Activation…”* and FormSend queues mail.
+### Optional: invisible ID instead of Gmail
 
-If the button in FormSubmit’s email shows **“Not a valid link” / “Confirmation token not found”**:
+After you activate once, FormSubmit may email you a **random string** so you can use  
+`action="https://formsubmit.co/THAT_STRING"` instead of exposing your Gmail in HTML — same service, clearer anti-scraping. Until that works reliably, **email in `action`** is officially documented and simplest.
 
-1. **Gmail → open the raw URL**: Desktop web Gmail → message **⋮** → **Show original** → scroll to **`href=`** inside the Activate link → copy **only** the `https://formsubmit.co/...` URL → paste into a normal desktop browser tab. (Outlook iOS/Mac often mangled links similarly — use ”View online” / **Show raw message**.)
-2. **Copy link as plain text** (avoid in-app browsers): long‑press → **Copy link address** → paste into Chrome/Safari.
-3. **Trigger a fresh activation**: submit once from **`https://ashokkaringal.github.io/legal-content-portfolio/index.html`** (or **`.../contact.html`**) **after deploy**, then activate from the newest email immediately.
-4. **FormSubmit Help** [`formsubmit.co/help`](https://formsubmit.co/help) — support can invalidate or reset a bad token.
+### If “ACTIVATE FORM” opens “Not a valid link”
 
-The **random ID** (`4f7cb65d643d6a942c190830a04118da`) replaces the naked email everywhere in markup; activation still must complete on FormSubmit’s side.
+1. **Gmail desktop** → message **⋮** → **Show original** → find **`<a href="https://formsubmit.co/...">`** → copy **only** that URL into Chrome/Safari.  
+2. Submit again from **`https://ashokkaringal.github.io/legal-content-portfolio/`** after deploy and use the **newest** email’s link immediately.  
+3. **[FormSubmit Help](https://formsubmit.co/help)** if tokens keep failing.
 
 ---
 
-## Legacy: Web3Forms (optional reference)
+## Legacy: Web3Forms
 
-Previously the forms used Web3Forms with an `access_key`. To revert:
-
-1. At [web3forms.com](https://web3forms.com), generate an access key for `deepaashok1977@gmail.com`.
-2. Set `action="https://api.web3forms.com/submit"` and restore `<input type="hidden" name="access_key" value="YOUR_KEY">`.
-3. Point `fetch()` at the Web3Forms URL and restore their success-shape handling.
-
-An old portfolio key routed mail to **`ashok.karingal@gmail.com`** until we moved off Web3Forms.
+To revert to Web3Forms: new **`access_key`** from [web3forms.com](https://web3forms.com) for `deepaashok1977@gmail.com`, then `POST` to `https://api.web3forms.com/submit` with hidden `access_key`.
