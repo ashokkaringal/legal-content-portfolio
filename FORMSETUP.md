@@ -25,7 +25,7 @@ The contact form is currently set up to use **Formspree**, but you need to confi
 
 4. **Configure email settings:**
    - In Formspree dashboard, go to your form settings
-   - Add your email address: `ashok.karingal@gmail.com`
+   - Add your email address: `deepaashok1977@gmail.com`
    - Enable email notifications
    - (Optional) Set up custom email templates
 
@@ -52,7 +52,7 @@ If you prefer EmailJS instead:
 
 1. **Get your access key:**
    - Go to https://web3forms.com/
-   - Enter your email: `ashok.karingal@gmail.com`
+   - Enter your email: `deepaashok1977@gmail.com`
    - Get your access key
 
 2. **Update contact.html:**

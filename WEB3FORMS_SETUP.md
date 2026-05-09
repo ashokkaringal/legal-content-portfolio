@@ -10,7 +10,7 @@
 
 ### Step 1: Get Your Access Key
 1. Go to **https://web3forms.com/**
-2. Enter your email: `ashok.karingal@gmail.com`
+2. Enter your email: `deepaashok1977@gmail.com`
 3. Click "Get Your Access Key"
 4. Copy the access key (looks like: `a1b2c3d4-e5f6-7890-abcd-ef1234567890`)
 
@@ -32,7 +32,7 @@
 ## 📧 Email Configuration
 
 The form is already configured to:
-- Send emails to: `ashok.karingal@gmail.com`
+- Send emails to: `deepaashok1977@gmail.com`
 - Subject: "New Contact Form Submission from Portfolio"
 - Include all form fields (name, email, company, message)
 
