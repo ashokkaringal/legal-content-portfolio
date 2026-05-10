@@ -81,11 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2200);
     }
     
-    // Animate word count from 0 to 525
+    // Animate word count from 0 to 528
     const wordCountElement = document.getElementById('word-count');
     if (wordCountElement) {
         let count = 0;
-        const target = 525;
+        const target = 528;
         const duration = 2000;
         const startTime = Date.now();
         
