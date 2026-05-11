@@ -510,11 +510,68 @@
       color: #f9fafb;
     }
 
+    .services-pricing-promo .pricing-tier-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 4px 0 10px;
+    }
+
     .services-pricing-promo .pricing-tier-price {
       font-size: 1.65rem;
       font-weight: 800;
       color: var(--accent);
       margin: 6px 0 14px;
+    }
+
+    .services-pricing-promo .pricing-addons {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: left;
+    }
+
+    .services-pricing-promo .pricing-addons-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .services-pricing-promo .pricing-addon-list {
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 520px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .services-pricing-promo .pricing-addon-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .services-pricing-promo .pricing-addon-list li:last-child {
+      border-bottom: none;
+    }
+
+    .services-pricing-promo .pricing-addon-list .addon-name {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .services-pricing-promo .pricing-addon-list .addon-price {
+      color: var(--accent);
+      font-weight: 600;
+      white-space: nowrap;
     }
 
     .services-pricing-promo .pricing-tier ul {
@@ -673,48 +730,49 @@
             <div class="pricing-tiers">
               <div class="pricing-tier">
                 <div class="pricing-tier-name">Basic</div>
-                <div class="pricing-tier-price">$299</div>
+                <p class="pricing-tier-subtitle">Simple 3-page business site</p>
+                <div class="pricing-tier-price">$149</div>
                 <ul>
-                  <li>Up to 3 pages</li>
-                  <li>Mobile-first responsive design</li>
-                  <li>Built on Wix or WordPress</li>
-                  <li>Contact form integration</li>
-                  <li>Basic SEO setup</li>
-                  <li>Delivered in 5–7 days</li>
+                  <li>Delivery: 5–7 days</li>
+                  <li>1 round of revisions included</li>
                 </ul>
               </div>
 
               <div class="pricing-tier pricing-tier--popular">
-                <span class="pricing-badge">Most Popular</span>
-                <div class="pricing-tier-name">Standard</div>
-                <div class="pricing-tier-price">$599</div>
+                <div class="pricing-tier-name">Standard — Most Popular</div>
+                <p class="pricing-tier-subtitle">Full small business website</p>
+                <div class="pricing-tier-price">$349</div>
                 <ul>
-                  <li>Up to 6 pages</li>
-                  <li>Mobile-first responsive design</li>
-                  <li>Wix, WordPress or React + Tailwind</li>
-                  <li>Contact form + Google Maps + Social media integration</li>
-                  <li>Full SEO setup + analytics</li>
-                  <li>Delivered in 7–10 days</li>
+                  <li>Delivery: 7–10 days</li>
+                  <li>2 rounds of revisions included</li>
                 </ul>
               </div>
 
               <div class="pricing-tier">
                 <div class="pricing-tier-name">Premium</div>
-                <div class="pricing-tier-price">$999</div>
+                <p class="pricing-tier-subtitle">eCommerce or custom React app</p>
+                <div class="pricing-tier-price">$599</div>
                 <ul>
-                  <li>Up to 10 pages or full eCommerce store</li>
-                  <li>Shopify or React + Node.js + Tailwind</li>
-                  <li>Payment gateway integration</li>
-                  <li>Product management setup</li>
-                  <li>Full SEO + performance optimisation</li>
-                  <li>API integration where needed</li>
-                  <li>Delivered in 10–14 days</li>
+                  <li>Delivery: 10–14 days</li>
+                  <li>3 rounds of revisions included</li>
                 </ul>
               </div>
             </div>
 
+            <div class="pricing-addons">
+              <div class="pricing-addons-title">Additional services</div>
+              <ul class="pricing-addon-list">
+                <li><span class="addon-name">Website Migration</span><span class="addon-price">$199–$299</span></li>
+                <li><span class="addon-name">QA Testing &amp; Automation</span><span class="addon-price">$199–$399</span></li>
+                <li><span class="addon-name">Shopify eCommerce Store</span><span class="addon-price">$499</span></li>
+                <li><span class="addon-name">SEO Setup &amp; Optimisation</span><span class="addon-price">$99–$149</span></li>
+                <li><span class="addon-name">Monthly Website Maintenance</span><span class="addon-price">$49–$79/month</span></li>
+                <li><span class="addon-name">AI Tools Platform Access</span><span class="addon-price">$9/month</span></li>
+              </ul>
+            </div>
+
             <p class="pricing-footnote">
-              Not sure which package fits? Book a free 20-minute consultation and we'll recommend the right option for your project.
+              All prices are in USD. 50% deposit required to start. Balance due on delivery. Not sure which package fits? Book a free 20-minute consultation — no obligation.
             </p>
             <a href="contact.html" class="btn-primary pricing-cta">Book Free Consultation</a>
           </div>
