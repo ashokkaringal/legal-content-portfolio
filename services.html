@@ -324,6 +324,108 @@
       text-decoration: none;
     }
 
+    .btn-secondary {
+      padding: 16px 32px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(var(--accent-rgb), 0.55);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(var(--accent-rgb), 0.12);
+      border-color: var(--accent);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    /* AI Power Tools / Gumroad promo */
+    .services-ai-promo {
+      padding: 80px 32px;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: radial-gradient(ellipse at 50% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(15, 23, 42, 0.65) 55%);
+    }
+
+    .services-ai-promo-inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .services-ai-promo h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #fff;
+      line-height: 1.25;
+    }
+
+    .services-ai-promo .ai-promo-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .services-ai-promo .ai-promo-features {
+      list-style: none;
+      margin: 0 auto 20px;
+      padding: 0;
+      max-width: 420px;
+      text-align: left;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .services-ai-promo .ai-promo-features li {
+      position: relative;
+      padding: 6px 0 6px 22px;
+    }
+
+    .services-ai-promo .ai-promo-features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .services-ai-promo .ai-promo-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .ai-promo-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .services-ai-promo .ai-promo-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-top: 18px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     footer {
       margin-top: 0;
       padding: 40px 32px;
@@ -350,6 +452,21 @@
       .services-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+      }
+
+      .services-ai-promo {
+        padding: 60px 24px;
+      }
+
+      .ai-promo-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .ai-promo-actions .btn-primary,
+      .ai-promo-actions .btn-secondary {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -474,6 +591,33 @@
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- AI Power Tools / Gumroad -->
+    <section class="services-ai-promo" id="ai-power-tools" aria-labelledby="ai-promo-heading">
+      <div class="services-ai-promo-inner">
+        <h2 id="ai-promo-heading">AI Power Tools — Get Full Access</h2>
+        <p class="ai-promo-lead">
+          Unlock our full suite of AI-powered productivity tools — built for modern workflows.
+        </p>
+        <ul class="ai-promo-features">
+          <li>AI-powered document analysis</li>
+          <li>Intelligent image processing</li>
+          <li>QR code generator</li>
+          <li>Smart automation tools</li>
+          <li>New tools added every month</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <p class="ai-promo-price">$9 per month</p>
+        <div class="ai-promo-actions">
+          <!-- Replace YOUR_GUMROAD_LINK with your live Gumroad product URL -->
+          <a href="https://YOUR_GUMROAD_LINK" class="btn-primary" target="_blank" rel="noopener noreferrer">Get Access — $9/month</a>
+          <a href="https://multi-tool-platform.vercel.app/" class="btn-secondary" target="_blank" rel="noopener noreferrer">Preview Tools Free</a>
+        </div>
+        <p class="ai-promo-note">
+          Secure payment via Gumroad. Instant access after payment. Cancel anytime.
+        </p>
       </div>
     </section>
 
