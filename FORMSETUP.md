@@ -1,7 +1,7 @@
 # Contact Form Email Setup Instructions
 
 ## Current Status
-The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with **`action="https://formsubmit.co/you@example.com"`** (placeholder — replace `you@example.com` with your real receiving address) and **`method="POST"`** (same layout as FormSubmit’s site). You may still need FormSubmit’s one‑time **“Activate Form”** step; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if activation links misbehave in Gmail.
+The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with **`action="https://formsubmit.co/deepaashok1977@gmail.com"`** and **`method="POST"`** (same layout as FormSubmit’s site). You may still need FormSubmit’s one‑time **“Activate Form”** step; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if activation links misbehave in Gmail.
 
 ## Setup Steps (alternatives — not wired in repo)
 
@@ -69,9 +69,9 @@ After setup:
 ## Current Implementation
 
 Deployed forms (`index.html` hero + `contact.html`):
-- ✅ FormSubmit **`POST`** to **`https://formsubmit.co/you@example.com`** (replace `you@example.com` with your address before relying on delivery)
+- ✅ FormSubmit **`POST`** to **`https://formsubmit.co/deepaashok1977@gmail.com`** (homepage pattern)
 - ✅ **`_subject`**, **`_next`** return URL, **`_honey`**, **`_captcha=false`**
-- ✅ Recipient: whatever address you put in the FormSubmit `action` URL
+- ✅ Recipient: **`deepaashok1977@gmail.com`**
 
 ## Need Help?
 

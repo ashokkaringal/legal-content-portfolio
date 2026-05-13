@@ -5,7 +5,7 @@
 Forms follow **[FormSubmit’s basic pattern](https://formsubmit.co/)**: `POST` to your address on their host.
 
 ```html
-<form action="https://formsubmit.co/you@example.com" method="POST">
+<form action="https://formsubmit.co/deepaashok1977@gmail.com" method="POST">
 ```
 
 Implemented in:
@@ -13,7 +13,7 @@ Implemented in:
 - [`index.html`](index.html) — hero “Get in Touch” form  
 - [`contact.html`](contact.html) — full contact form  
 
-**Also set:** `_subject`, `_next` (return to your site after submit), `_captcha=false`, honeypot `_honey`. Submissions go to the address in the FormSubmit `action` URL (replace the placeholder `you@example.com` in `index.html` and `contact.html` with your real inbox).
+**Also set:** `_subject`, `_next` (return to your site after submit), `_captcha=false`, honeypot `_honey`. Submissions go to **`deepaashok1977@gmail.com`**.
 
 ### Optional: invisible ID instead of Gmail
 
@@ -30,4 +30,4 @@ After you activate once, FormSubmit may email you a **random string** so you can
 
 ## Legacy: Web3Forms
 
-To revert to Web3Forms: new **`access_key`** from [web3forms.com](https://web3forms.com) for your email, then `POST` to `https://api.web3forms.com/submit` with hidden `access_key`.
+To revert to Web3Forms: new **`access_key`** from [web3forms.com](https://web3forms.com) for `deepaashok1977@gmail.com`, then `POST` to `https://api.web3forms.com/submit` with hidden `access_key`.
