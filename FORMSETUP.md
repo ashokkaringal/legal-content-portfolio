@@ -1,7 +1,7 @@
 # Contact Form Email Setup Instructions
 
 ## Current Status
-The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with **`action="https://formsubmit.co/deepaashok1977@gmail.com"`** and **`method="POST"`** (same layout as FormSubmit’s site). You may still need FormSubmit’s one‑time **“Activate Form”** step; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if activation links misbehave in Gmail.
+The **home** hero form (`index.html`) and **contact** page (`contact.html`) use **[FormSubmit](https://formsubmit.co)** with **`action="https://formsubmit.co/you@example.com"`** (placeholder — replace `you@example.com` with your real receiving address) and **`method="POST"`** (same layout as FormSubmit’s site). You may still need FormSubmit’s one‑time **“Activate Form”** step; see **[WEB3FORMS_SETUP.md](WEB3FORMS_SETUP.md)** if activation links misbehave in Gmail.
 
 ## Setup Steps (alternatives — not wired in repo)
 
@@ -25,7 +25,7 @@ The **home** hero form (`index.html`) and **contact** page (`contact.html`) use 
 
 4. **Configure email settings:**
    - In Formspree dashboard, go to your form settings
-   - Add your email address: `deepaashok1977@gmail.com`
+   - Add your email address in the Formspree dashboard (the address where you want notifications).
    - Enable email notifications
    - (Optional) Set up custom email templates
 
@@ -52,7 +52,7 @@ If you prefer EmailJS instead:
 
 1. **Get your access key:**
    - Go to https://web3forms.com/
-   - Enter your email: `deepaashok1977@gmail.com`
+   - Enter your email at web3forms.com to receive your access key.
    - Get your access key
 
 2. **Update contact.html:**
@@ -69,9 +69,9 @@ After setup:
 ## Current Implementation
 
 Deployed forms (`index.html` hero + `contact.html`):
-- ✅ FormSubmit **`POST`** to **`https://formsubmit.co/deepaashok1977@gmail.com`** (homepage pattern)
+- ✅ FormSubmit **`POST`** to **`https://formsubmit.co/you@example.com`** (replace `you@example.com` with your address before relying on delivery)
 - ✅ **`_subject`**, **`_next`** return URL, **`_honey`**, **`_captcha=false`**
-- ✅ Recipient: **`deepaashok1977@gmail.com`**
+- ✅ Recipient: whatever address you put in the FormSubmit `action` URL
 
 ## Need Help?
 
