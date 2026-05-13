@@ -25,7 +25,7 @@ The **home** hero form (`index.html`) and **contact** page (`contact.html`) use 
 
 4. **Configure email settings:**
    - In Formspree dashboard, go to your form settings
-   - Add your email address in the Formspree dashboard (the address where you want notifications).
+   - Add your email address: `deepaashok1977@gmail.com`
    - Enable email notifications
    - (Optional) Set up custom email templates
 
@@ -52,7 +52,7 @@ If you prefer EmailJS instead:
 
 1. **Get your access key:**
    - Go to https://web3forms.com/
-   - Enter your email at web3forms.com to receive your access key.
+   - Enter your email: `deepaashok1977@gmail.com`
    - Get your access key
 
 2. **Update contact.html:**
